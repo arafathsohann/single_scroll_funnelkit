@@ -9,3 +9,8 @@ enabled = true
 binding = "DB"
 database_name = "funnel-db"
 database_id = "to-be-replaced-after-creation"
+
+[[rules]]
+type = "Text"
+globs = ["**/client.js"]
+fallthrough = false

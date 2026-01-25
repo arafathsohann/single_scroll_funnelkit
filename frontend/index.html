@@ -60,11 +60,9 @@
             <div class="flex flex-col items-center mb-6">
                 <div class="text-3xl font-bold tracking-tighter text-brand flex items-center gap-2">
                     <span class="material-icons text-4xl">inventory_2</span>
-                    GLACE COTTON
+                    <span id="header-logo"></span>
                 </div>
-                <h1 class="text-2xl md:text-3xl font-bold text-red-600 mt-4">
-                    অগ্রিম টাকা ছাড়াই অর্ডার করুন <br /> সময় মাত্র অল্প
-                </h1>
+                <h1 id="header-headline" class="text-2xl md:text-3xl font-bold text-red-600 mt-4"></h1>
             </div>
             <div class="flex justify-center gap-3 mb-8">
                 <div class="flex flex-col items-center">
@@ -86,133 +84,71 @@
             </div>
             <div
                 class="bg-brand text-white py-3 px-6 rounded-lg flex flex-wrap items-center justify-between gap-4 shadow-lg">
-                <span class="text-lg font-semibold">অফার শেষ হবার আগেই</span>
-                <a class="bg-primary hover:bg-red-700 text-white px-6 py-2 rounded-full font-bold flex items-center gap-2 transition-transform active:scale-95"
+                <span id="header-cta-text" class="text-lg font-semibold"></span>
+                <a id="header-cta-btn"
+                    class="bg-primary hover:bg-red-700 text-white px-6 py-2 rounded-full font-bold flex items-center gap-2 transition-transform active:scale-95"
                     href="#order-form">
-                    অর্ডার করতে চাই <span class="material-icons text-sm">shopping_cart</span>
                 </a>
             </div>
         </div>
     </header>
     <main class="max-w-5xl mx-auto px-4 py-12">
         <section class="text-center mb-16">
-            <h2 class="text-2xl md:text-3xl font-bold text-red-600 mb-2">অরিজিনাল চায়না ডুগি ফেব্রিক্স সাথে ১০% স্টিজ
-            </h2>
-            <p class="text-slate-600 mb-8">Premium Cargo Pants for man solid colour</p>
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-10">
-                <div class="bg-white p-2 rounded-xl shadow-sm border border-slate-100">
-                    <img alt="Green Cargo Pants" class="rounded-lg w-full aspect-[3/4] object-cover mb-2"
-                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuD4Zt_qAtcHiBpl2XqnMQqRSU_nhxXkUcPK-BX48QoHxS30KyeeTvW0Lrqt24OkUR_6TliUmTjzzLZcKF8cXgk5PrgFCdvpMRQXSWQ9WHI1xsKRXvatXfuyT4XKw3VIVrMyUfmZYf0n73_z_OiXQ33b7RIubdY7d4JcVc2LfPaByC-T1z9rKW5PvJI1cC7maSnMono62VMmqamhylHoz-txTS6-Ew9KN4EWVYCLfVyn7vQ1LyvhycivFSdILHRdy8W5cjUEpVk8QPg" />
-                </div>
-                <div class="bg-white p-2 rounded-xl shadow-sm border border-slate-100">
-                    <img alt="Grey Cargo Pants" class="rounded-lg w-full aspect-[3/4] object-cover mb-2"
-                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuDIBgywTX7Etbpi6iu4oIpnHYFJP1QAobZwItMfv5D6YAV-tFNrPD0VGYpykVCUmXF2OFElxESv2RXflfZkBJ7dx7fy6nB8bU5MEKgvnF6EfcjtEQAwUHiOE0DAz0FMGwK2OqTQrhPTUgsFXTSVSTnGlDbOOa2xKcPkR95DNpMEOj0ahCr9feB4Z6lv32x_V_ab2d8N1HDwoXtjvv3Z_m75DoXYox_dTzl-wW2ea6xX0gRiquh1_BFe1-JWDJ2S9x6ngUOUZdg7Qpg" />
-                </div>
-                <div class="bg-white p-2 rounded-xl shadow-sm border border-slate-100">
-                    <img alt="Khaki Cargo Pants" class="rounded-lg w-full aspect-[3/4] object-cover mb-2"
-                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuBgKkC1e2EctdyUlvEW4s635DtmKNGJ2lN9161fiA-we4N1ippCBJKz6YJRr3iTkbbLB1dAYyJj6Qd2a1oH7gv-gRKXBeROiSxA7vF36rzp2qDy9uvxdsEYY2s-0yc-UV6JSE2ZJZu0mKx3IM-3QTlmTCMyFtbbnznTXLZEhlf1BioF-GAxr6Oz6DdQ6IdxMabGE8iGXchbA4qU74towstmjh-8JdrZ_VYuv--yU5GZ3SSLAwMnVSgc5BeEYKpKz2-rB1iys2094aE" />
-                </div>
-                <div class="bg-white p-2 rounded-xl shadow-sm border border-slate-100">
-                    <img alt="Black Cargo Pants" class="rounded-lg w-full aspect-[3/4] object-cover mb-2"
-                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuBJhYomIyjXNNe101lWnGdwWIZLI871_fntNh1j6MyERFNNAQhNrm3W_v8BbWQVrIty1KyCNrpwS83AlzzxofYx1NkH5xGuczHHzJjvQeooiXQGYJvZNbTJEMJKX7rek2AMPH3yyZyMEjHqX-n7G8JSEM1jK5OW2QDca60iTumCruH-83Z0hreHf5NOpNhNiqgEs3Kdc7kdGxvK7PL35G1zTwwdVB7JOcA-a5jbvqJZT14Sj6t2QRZjEkz4bZVNbJuUNCP4iPSO05A" />
-                </div>
+            <h2 id="hero-headline" class="text-2xl md:text-3xl font-bold text-red-600 mb-2"></h2>
+            <p id="hero-subheadline" class="text-slate-600 mb-8"></p>
+            <div id="hero-showcase" class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-10">
+                <!-- Dynamic Images -->
             </div>
-            <div class="inline-block bg-brand text-white py-2 px-8 rounded-lg mb-8 font-bold text-lg">
-                কেন আমাদের থেকে প্রোডাক্ট কিনবেন?
+            <div id="value-props-title"
+                class="inline-block bg-brand text-white py-2 px-8 rounded-lg mb-8 font-bold text-lg">
             </div>
-            <div class="grid md:grid-cols-2 gap-6 text-left max-w-3xl mx-auto mb-10">
-                <div class="flex items-start gap-3">
-                    <span class="material-icons text-orange-500 mt-1">check_box</span>
-                    <p class="font-medium">আমরা দিচ্ছি নিজস্ব ফ্যাক্টরিতে তৈরি প্রিমিয়াম কোয়ালিটি পণ্য, যা বাজারের অন্য
-                        কোথাও পাবেন না।</p>
-                </div>
-                <div class="flex items-start gap-3">
-                    <span class="material-icons text-orange-500 mt-1">check_box</span>
-                    <p class="font-medium">আমাদের প্রোডাক্টে ব্যবহৃত ফেব্রিক – চাইনিজ ডুগি (১০% স্টিচ) – যা খুব সফট ও
-                        আরামদায়ক।</p>
-                </div>
-                <div class="flex items-start gap-3">
-                    <span class="material-icons text-orange-500 mt-1">check_box</span>
-                    <p class="font-medium">ফ্যাশন ও ফিনিশিংয়ে আমরা আপসহীন। প্রতিটি কার্গো প্যান্ট নিখুঁতভাবে তৈরি।</p>
-                </div>
-                <div class="flex items-start gap-3">
-                    <span class="material-icons text-orange-500 mt-1">check_box</span>
-                    <p class="font-medium">আমরা দিচ্ছি বিশেষ কম্বো অফার, যেখানে আপনি কম দামে আরও ভালো কিছু পাচ্ছেন।</p>
-                </div>
+            <div id="value-props-list" class="grid md:grid-cols-2 gap-6 text-left max-w-3xl mx-auto mb-10">
+                <!-- Dynamic Value Props -->
             </div>
             <div class="flex justify-center mb-12">
-                <a class="bg-primary hover:bg-red-700 text-white px-10 py-4 rounded-lg font-bold text-xl shadow-xl flex items-center gap-2"
+                <a id="hero-main-cta"
+                    class="bg-primary hover:bg-red-700 text-white px-10 py-4 rounded-lg font-bold text-xl shadow-xl flex items-center gap-2"
                     href="#order-form">
-                    অর্ডার করতে চাই <span class="material-icons">shopping_cart</span>
                 </a>
             </div>
         </section>
         <section class="bg-slate-50/50 rounded-2xl p-6 md:p-10 mb-16 border border-slate-200">
             <div class="grid md:grid-cols-2 gap-10 items-center">
                 <div class="relative">
-                    <img alt="Combo Offer" class="rounded-2xl shadow-2xl border-4 border-brand"
-                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuA-vdr327WDAQndrnJj7iY3AYfrs5Na6PycPCqfil2IjwVRDRZ9l9qI14ODMS89JmmAmliRwTJt3hOxIkXrBQzd0zOJWchWUGe4kFzsfYiRS3OQhBy1U3rGQiPisftXDWo3Af7Jvu75sfdWirN-erKdhkRuEq4n66DTfJkmSyqkll3zL97mpH7noiWMTKVDR7nl2wnhGEM1M6_VXk8_Rd7Ky8P5YDcKVjfR73jWSlb4jm697OkfWXO9UlnlUQZl1EfZK6uRpyOIir8" />
+                    <img id="combo-image" alt="Combo Offer" class="rounded-2xl shadow-2xl border-4 border-brand"
+                        src="" />
                     <div
                         class="absolute -bottom-4 -right-4 bg-brand text-white p-4 rounded-xl font-bold shadow-lg transform rotate-3">
-                        <div class="text-xl">২ পিসের কম্বো মাত্র</div>
-                        <div class="text-3xl">১৩০০ টাকা</div>
+                        <div id="combo-badge-line1" class="text-xl"></div>
+                        <div id="combo-badge-line2" class="text-3xl"></div>
                     </div>
                 </div>
                 <div>
-                    <h3 class="text-2xl font-bold mb-4 text-brand">Cargo Pants সম্পর্কে বিস্তারিত
+                    <h3 id="combo-details-title" class="text-2xl font-bold mb-4 text-brand">
                     </h3>
-                    <p class="mb-6 opacity-80 leading-relaxed">
-                        আরামদায়ক ও স্টাইলিশ কার্গো প্যান্ট – একাধিক পকেট, টেকসই কাপড় ও মডার্ন ডিজাইনে তৈরি। দৈনন্দিন
-                        ব্যবহার বা আউটডোর অ্যাক্টিভিটির জন্য আদর্শ।
+                    <p id="combo-details-desc" class="mb-6 opacity-80 leading-relaxed">
                     </p>
-                    <ul class="space-y-3 mb-8">
-                        <li class="flex items-center gap-2"><span
-                                class="text-green-500 material-icons text-sm">fiber_manual_record</span> ১০০%
-                            কোয়ালিটিফুল</li>
-                        <li class="flex items-center gap-2"><span
-                                class="text-green-500 material-icons text-sm">fiber_manual_record</span> ১০০% অরিজিনাল
-                            চামড়া (ট্যাগ)</li>
-                        <li class="flex items-center gap-2"><span
-                                class="text-green-500 material-icons text-sm">fiber_manual_record</span> প্রিমিয়াম
-                            কোয়ালিটির নিশ্চয়তা</li>
-                        <li class="flex items-center gap-2"><span
-                                class="text-green-500 material-icons text-sm">fiber_manual_record</span> Fabric: Chinese
-                            Dughi Fabrics (10% Stretch)</li>
-                        <li class="flex items-center gap-2"><span
-                                class="text-green-500 material-icons text-sm">fiber_manual_record</span> Fly Zipper</li>
-                        <li class="flex items-center gap-2"><span
-                                class="text-green-500 material-icons text-sm">fiber_manual_record</span> 5 Box Pocket
-                            Cargo Style with Snap Button</li>
+                    <ul id="combo-features-list" class="space-y-3 mb-8">
+                        <!-- Dynamic Features -->
                     </ul>
-                    <a class="bg-primary text-white py-3 px-8 rounded-lg font-bold flex items-center justify-center gap-2 w-full md:w-auto"
+                    <a id="combo-cta"
+                        class="bg-primary text-white py-3 px-8 rounded-lg font-bold flex items-center justify-center gap-2 w-full md:w-auto"
                         href="#order-form">
-                        অর্ডার করতে চাই <span class="material-icons">shopping_cart</span>
                     </a>
                 </div>
             </div>
         </section>
-        <div class="grid md:grid-cols-2 gap-4 mb-16">
-            <div class="border-2 border-brand/20 bg-white p-4 rounded-xl text-center">
-                <span class="text-lg font-bold">২ পিস কার্গো প্যান্টের মূল্য <span
-                        class="text-green-600 border-2 border-green-600 rounded-full px-2 py-0.5">১৩০০</span>
-                    টাকা</span>
-            </div>
-            <div class="border-2 border-brand/20 bg-white p-4 rounded-xl text-center">
-                <span class="text-lg font-bold">৩ পিস কার্গো প্যান্টের মূল্য <span
-                        class="text-green-600 border-2 border-green-600 rounded-full px-2 py-0.5">১৮০০</span>
-                    টাকা</span>
-            </div>
+        <div id="pricing-container" class="grid md:grid-cols-2 gap-4 mb-16">
+            <!-- Dynamic Pricing -->
         </div>
-        <p class="text-center text-lg font-semibold max-w-3xl mx-auto mb-16 px-4">
-            অবশ্যই ১০০% কনফার্ম হয়ে অর্ডারটি কনফার্ম করবেন। আমরা আপনার থেকে অগ্রিম কোনো টাকা নিচ্ছি না। কোনো কারণে যদি
-            প্রোডাক্ট না রাখতে চান ডেলিভারি চার্জ দিয়ে ব্যাক করে দিবেন।
+        <p id="trust-badge-text" class="text-center text-lg font-semibold max-w-3xl mx-auto mb-16 px-4">
         </p>
         <section class="bg-[#10B981] text-white rounded-3xl p-6 md:p-12 mb-20 text-center shadow-2xl">
             <div class="mb-8 flex flex-col items-center">
                 <div class="text-4xl font-black mb-2 flex items-center gap-2">
-                    <span class="material-icons text-4xl">inventory_2</span> GLACE COTTON
+                    <span class="material-icons text-4xl">inventory_2</span> <span id="size-chart-logo-text"></span>
                 </div>
-                <p class="text-lg opacity-90">Size Chart - In Inches (Expected Deviation &lt;3%)</p>
+                <p id="size-chart-title" class="text-lg opacity-90"></p>
             </div>
             <div class="overflow-x-auto">
                 <table class="w-full text-center border-collapse text-xl">
@@ -355,98 +291,41 @@
                     <h3 class="text-xl font-bold mb-6 flex items-center gap-2">
                         <span
                             class="bg-brand text-white w-8 h-8 rounded-full flex items-center justify-center text-sm">1</span>
-                        আপনার Product সিলেক্ট করুন
+                        <span id="order-step1-title"></span>
                     </h3>
-                    <div class="space-y-4">
-                        <label class="block cursor-pointer group">
-                            <input checked="" class="hidden peer" name="product" type="radio" />
-                            <div
-                                class="flex items-center gap-4 p-4 rounded-xl border-2 border-slate-200 peer-checked:border-brand peer-checked:bg-blue-50 transition-all">
-                                <img alt="Product thumbnail" class="w-16 h-16 rounded-lg object-cover"
-                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuDJ1eNii1O-hY9fUTWFP6WiSVnV_Mkwa1u3WDolKy1do-NbLjyDQgLcSd4ZdlgW797-WTZyiMsTBVHxdXpiQG0SSD6XK-AQ9aTlubWvXjIJo-MQH_1679YSGpwUWGcqiGDpgLQAqKVVq3InxyVExwbksNtyPJ5TEPRdsXVaeqrqY1vJt4XDQ2DkrCBQ-fhnFnQW-eKQTdekbjA2JcDrSaUPm8IjIGTGh4zF5v5ujWOwxZChQ6lCEXPTdwdc1Jgjdm3PsX5a0EBmJaw" />
-                                <div class="flex-1">
-                                    <h4 class="font-bold">প্রিমিয়াম কার্গো প্যান্ট × ১</h4>
-                                    <p class="text-sm text-slate-500">৪৪০৳</p>
-                                </div>
-                                <div class="flex items-center gap-2">
-                                    <button
-                                        class="w-8 h-8 rounded bg-slate-200 flex items-center justify-center">-</button>
-                                    <span class="font-bold px-2">1</span>
-                                    <button
-                                        class="w-8 h-8 rounded bg-slate-200 flex items-center justify-center">+</button>
-                                </div>
-                            </div>
-                        </label>
-                        <label class="block cursor-pointer group">
-                            <input class="hidden peer" name="product" type="radio" />
-                            <div
-                                class="flex items-center gap-4 p-4 rounded-xl border-2 border-slate-200 peer-checked:border-brand peer-checked:bg-blue-50 transition-all">
-                                <img alt="Product thumbnail" class="w-16 h-16 rounded-lg object-cover"
-                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuDyrdAXv69DAJpULhPaBasbIHgz3JRq4-1qLgXG8TsagQvaXIYT4jlcdP5VWwoqQtnK3jTYr8Bh4NzIZuHoGNaP8sQsXmOPtZ2Ygm8rlrk8HKlG-eoGfY1wq5eVoXZoiduMOiLTufdqeJp1LXsi2qh1ZSjUdf8akVZjd0NIcBO1P0kMSwbJ0ntyvGkYqSYypTIgmJvb7YtulCZfK-GktRCkLMoX1khbjKRBBXO7aL_2yDWSjZx0BjHU8URNfmwIWVEoYHh3Da1ffs8" />
-                                <div class="flex-1">
-                                    <h4 class="font-bold">প্রিমিয়াম কার্গো প্যান্ট কম্বো - (২-প্যাক) × ১</h4>
-                                    <p class="text-sm text-slate-500">১,৩০০৳</p>
-                                </div>
-                                <div class="flex items-center gap-2">
-                                    <button
-                                        class="w-8 h-8 rounded bg-slate-200 flex items-center justify-center">-</button>
-                                    <span class="font-bold px-2">1</span>
-                                    <button
-                                        class="w-8 h-8 rounded bg-slate-200 flex items-center justify-center">+</button>
-                                </div>
-                            </div>
-                        </label>
-                        <label class="block cursor-pointer group">
-                            <input class="hidden peer" name="product" type="radio" />
-                            <div
-                                class="flex items-center gap-4 p-4 rounded-xl border-2 border-slate-200 peer-checked:border-brand peer-checked:bg-blue-50 transition-all">
-                                <img alt="Product thumbnail" class="w-16 h-16 rounded-lg object-cover"
-                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuDy_idZ3U2y2NAiNlUmvV9EYqVavgg09KazcMoCInhss83og4OzIcx2nTzIMi43pifoTVSaKnv9_ad23zo-zRSsZT6av-Fe8N_UAgCgthtp4Z1SBxFcS3wQA4v8Cs42UVDK8RnSwo616sdMLaPCiBd5IIZ-AiA4o5BC1X_9BSPZ_wU9BLJXION65QbkfbAmQHeAb69o7u8fr7tqgVflGxxsBSxCTqA2LIfs_Awh8RXx__xWS_XnSZW7E_spmo4PzWLzdp61oOL9_BA" />
-                                <div class="flex-1">
-                                    <h4 class="font-bold">প্রিমিয়াম কার্গো প্যান্ট কম্বো - (৩-প্যাক) × ১</h4>
-                                    <p class="text-sm text-slate-500">১,১৮০৳</p>
-                                </div>
-                                <div class="flex items-center gap-2">
-                                    <button
-                                        class="w-8 h-8 rounded bg-slate-200 flex items-center justify-center">-</button>
-                                    <span class="font-bold px-2">1</span>
-                                    <button
-                                        class="w-8 h-8 rounded bg-slate-200 flex items-center justify-center">+</button>
-                                </div>
-                            </div>
-                        </label>
+                    <div id="product-list-container" class="space-y-4">
+                        <!-- Dynamic Products -->
                     </div>
                 </div>
                 <div class="space-y-6">
                     <h3 class="text-xl font-bold flex items-center gap-2">
                         <span
                             class="bg-brand text-white w-8 h-8 rounded-full flex items-center justify-center text-sm">2</span>
-                        অর্ডার করতে ফর্মটি পুরন করুন
+                        <span id="order-step2-title"></span>
                     </h3>
                     <div class="grid gap-4">
                         <div>
-                            <label class="block text-sm font-semibold mb-2">আপনার নাম লিখুন *</label>
+                            <label id="label-name" class="block text-sm font-semibold mb-2"></label>
                             <input id="customer_name"
                                 class="w-full rounded-lg border-slate-300 focus:border-brand focus:ring-brand"
-                                placeholder="যেমনঃ মোঃ রফিকুল ইসলাম" type="text" />
+                                type="text" />
                         </div>
                         <div>
-                            <label class="block text-sm font-semibold mb-2">আপনার গ্রাম, পোস্ট অফিস, থানা, জেলা লিখুন
-                                *</label>
+                            <label id="label-address" class="block text-sm font-semibold mb-2"></label>
                             <textarea id="customer_address"
                                 class="w-full rounded-lg border-slate-300 focus:border-brand focus:ring-brand"
-                                placeholder="যেমনঃ বাড়ি #১২, রোড #০৫, ধানমন্ডি, ঢাকা" rows="3"></textarea>
+                                rows="3"></textarea>
                         </div>
                         <div>
-                            <label class="block text-sm font-semibold mb-2">আপনার মোবাইল নং লিখুন *</label>
+                            <label id="label-phone" class="block text-sm font-semibold mb-2"></label>
                             <input id="customer_phone"
                                 class="w-full rounded-lg border-slate-300 focus:border-brand focus:ring-brand"
-                                placeholder="০১৮XXXXXXXX" type="tel" />
+                                type="tel" />
                         </div>
                     </div>
                     <div class="grid grid-cols-2 gap-8">
                         <div>
-                            <label class="block text-sm font-semibold mb-3">প্যান্টের সাইজ *</label>
+                            <label id="label-size" class="block text-sm font-semibold mb-3"></label>
                             <div class="space-y-2">
                                 <label class="flex items-center gap-2 cursor-pointer"><input
                                         class="text-brand focus:ring-brand" name="size" type="radio" /> M *</label>
@@ -459,7 +338,7 @@
                             </div>
                         </div>
                         <div>
-                            <label class="block text-sm font-semibold mb-3">কালার সিলেকশন *</label>
+                            <label id="label-color" class="block text-sm font-semibold mb-3"></label>
                             <div class="space-y-2">
                                 <label class="flex items-center gap-2 cursor-pointer"><input
                                         class="text-brand rounded focus:ring-brand" name="color" value="Black"
@@ -474,31 +353,17 @@
                         </div>
                     </div>
                     <div>
-                        <h3 class="text-lg font-bold mb-4">Shipping</h3>
-                        <div class="space-y-3 bg-white p-4 rounded-xl border border-slate-200">
-                            <label class="flex items-center justify-between cursor-pointer">
-                                <div class="flex items-center gap-2">
-                                    <input checked="" class="text-brand focus:ring-brand" name="shipping"
-                                        type="radio" />
-                                    <span>ঢাকার ভিতরে ডেলিভারি চার্জ:</span>
-                                </div>
-                                <span class="font-bold">৭০৳</span>
-                            </label>
-                            <label
-                                class="flex items-center justify-between cursor-pointer border-t border-slate-100 pt-3">
-                                <div class="flex items-center gap-2">
-                                    <input class="text-brand focus:ring-brand" name="shipping" type="radio" />
-                                    <span>ঢাকার বাহিরে ডেলিভারি চার্জ:</span>
-                                </div>
-                                <span class="font-bold">১২০৳</span>
-                            </label>
+                        <h3 id="label-shipping" class="text-lg font-bold mb-4"></h3>
+                        <div id="shipping-options-container"
+                            class="space-y-3 bg-white p-4 rounded-xl border border-slate-200">
+                            <!-- Dynamic Shipping -->
                         </div>
                     </div>
                 </div>
             </div>
             <div class="lg:col-span-2 space-y-6">
                 <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-200 sticky top-8">
-                    <h3 class="text-xl font-bold mb-6">আপনার অর্ডার</h3>
+                    <h3 id="summary-title" class="text-xl font-bold mb-6"></h3>
                     <div class="space-y-4 mb-6">
                         <div class="flex items-start gap-4 pb-4 border-b border-slate-100">
                             <img alt="Product thumbnail" class="w-12 h-12 rounded object-cover"
@@ -518,20 +383,18 @@
                         </div>
                     </div>
                     <div class="bg-green-50 p-4 rounded-xl mb-6">
-                        <p class="text-sm font-semibold mb-2">সম্পূর্ণ ক্যাশ অন ডেলিভারি</p>
+                        <p id="summary-cod-text" class="text-sm font-semibold mb-2"></p>
                         <label
                             class="flex items-center gap-2 text-sm bg-green-400 p-2 rounded text-white cursor-pointer">
                             <input checked="" class="rounded border-none focus:ring-0" type="checkbox" />
-                            পণ্য হাতে পেয়ে টাকা পরিশোধ করুন
+                            <span id="summary-cod-label"></span>
                         </label>
                     </div>
-                    <p class="text-[10px] text-slate-400 mb-6 leading-relaxed">
-                        Your personal data will be used to process your order, support your experience throughout this
-                        website, and for other purposes described in our privacy policy.
+                    <p id="summary-disclaimer" class="text-[10px] text-slate-400 mb-6 leading-relaxed">
                     </p>
                     <button id="order-btn"
                         class="w-full bg-primary hover:bg-red-700 text-white py-4 rounded-xl font-bold text-lg flex items-center justify-center gap-2 shadow-lg shadow-primary/30 transition-all active:scale-95">
-                        <span class="material-icons">lock</span> অর্ডার করুন ৫১০৳
+                        <span class="material-icons">lock</span> <span id="order-btn-text"></span>
                     </button>
                 </div>
             </div>
@@ -539,13 +402,10 @@
     </main>
     <footer class="bg-slate-100 py-12 border-t border-slate-200">
         <div class="max-w-4xl mx-auto px-4 text-center">
-            <p class="text-brand font-bold mb-4">যেকোনো প্রয়োজনে কল করুন</p>
-            <div class="text-lg font-bold flex flex-col gap-1">
-                <p>01832-930900</p>
-                <p>01334-260075</p>
+            <p id="footer-contact-title" class="text-brand font-bold mb-4"></p>
+            <div id="footer-numbers" class="text-lg font-bold flex flex-col gap-1">
             </div>
-            <div class="mt-8 text-sm opacity-50">
-                © 2024 Glace Cotton. All rights reserved.
+            <div id="footer-copyright" class="mt-8 text-sm opacity-50">
             </div>
         </div>
     </footer>
@@ -628,21 +488,285 @@
         });
     </script>
     <script>
-        // Dynamic Content Fetching
+        // Store content globally for access in event handlers
+        let siteContent = {};
+
         document.addEventListener('DOMContentLoaded', async () => {
             try {
+                // Fetch Content from local JSON file (simulating backend)
+                // In a real worker environment, this might be /api/content
                 const res = await fetch('http://localhost:8787/api/content');
                 const data = await res.json();
+                siteContent = data;
 
-                if (data.hero) {
-                    // Update Hero Headline
-                    const heroTitle = document.querySelector('h1.text-2xl');
-                    if (heroTitle) heroTitle.innerHTML = data.hero.headline + '<br/>' + data.hero.subheadline;
-                }
+                renderContent(data);
+                initializeOrderForm(data);
 
-                // You can map more fields here as needed based on content.json structure
             } catch (e) {
                 console.error('Failed to fetch dynamic content', e);
+            }
+        });
+
+        function renderContent(data) {
+            // --- Meta ---
+            document.title = data.meta.title;
+
+            // --- Header ---
+            setText('header-logo', data.header.logoText);
+            setHTML('header-headline', data.header.headline);
+            setText('header-cta-text', data.header.cta.text);
+            setHTML('header-cta-btn', `${data.header.cta.buttonText} <span class="material-icons text-sm">shopping_cart</span>`);
+
+            // --- Hero ---
+            setText('hero-headline', data.hero.headline);
+            setText('hero-subheadline', data.hero.subheadline);
+
+            // Showcase Images
+            const showcaseContainer = document.getElementById('hero-showcase');
+            if (showcaseContainer && data.hero.showcaseImages) {
+                showcaseContainer.innerHTML = data.hero.showcaseImages.map(img => `
+                    <div class="bg-white p-2 rounded-xl shadow-sm border border-slate-100">
+                        <img alt="${img.alt}" class="rounded-lg w-full aspect-[3/4] object-cover mb-2" src="${img.src}" />
+                    </div>
+                `).join('');
+            }
+
+            setText('value-props-title', data.hero.valueProps.title);
+
+            // Value Props
+            const valuePropsContainer = document.getElementById('value-props-list');
+            if (valuePropsContainer && data.hero.valueProps.items) {
+                valuePropsContainer.innerHTML = data.hero.valueProps.items.map(item => `
+                    <div class="flex items-start gap-3">
+                        <span class="material-icons text-orange-500 mt-1">check_box</span>
+                        <p class="font-medium">${item}</p>
+                    </div>
+                `).join('');
+            }
+
+            setHTML('hero-main-cta', `${data.hero.mainCta} <span class="material-icons">shopping_cart</span>`);
+
+            // --- Combo Offer ---
+            const comboImg = document.getElementById('combo-image');
+            if (comboImg) comboImg.src = data.comboOffer.image;
+
+            setText('combo-badge-line1', data.comboOffer.badge.line1);
+            setText('combo-badge-line2', data.comboOffer.badge.line2);
+            setText('combo-details-title', data.comboOffer.details.title);
+            setText('combo-details-desc', data.comboOffer.details.description);
+
+            const comboFeatures = document.getElementById('combo-features-list');
+            if (comboFeatures && data.comboOffer.details.features) {
+                comboFeatures.innerHTML = data.comboOffer.details.features.map(feat => `
+                    <li class="flex items-center gap-2">
+                        <span class="text-green-500 material-icons text-sm">fiber_manual_record</span> ${feat}
+                    </li>
+                `).join('');
+            }
+
+            setHTML('combo-cta', `${data.comboOffer.details.cta} <span class="material-icons">shopping_cart</span>`);
+
+            // --- Pricing ---
+            const pricingContainer = document.getElementById('pricing-container');
+            if (pricingContainer && data.pricing) {
+                pricingContainer.innerHTML = data.pricing.map(item => `
+                    <div class="border-2 border-brand/20 bg-white p-4 rounded-xl text-center">
+                        <span class="text-lg font-bold">${item.text} <span class="text-green-600 border-2 border-green-600 rounded-full px-2 py-0.5">${item.price}</span> ${item.unit}</span>
+                    </div>
+                `).join('');
+            }
+
+            setText('trust-badge-text', data.trustBadge.text);
+
+            // --- Size Chart ---
+            setText('size-chart-logo-text', data.header.logoText);
+            setText('size-chart-title', data.sizeChart.title);
+            // We are keeping the table static for now as it's complex structure, or we can make it dynamic later if requested.
+
+            // --- Footer ---
+            setText('footer-contact-title', data.footer.contactTitle);
+            const footerNumbers = document.getElementById('footer-numbers');
+            if (footerNumbers && data.footer.phoneNumbers) {
+                footerNumbers.innerHTML = data.footer.phoneNumbers.map(num => `<p>${num}</p>`).join('');
+            }
+            setText('footer-copyright', data.footer.copyright);
+        }
+
+        function initializeOrderForm(data) {
+            // Titles & Labels
+            setText('order-step1-title', data.orderForm.step1Title);
+            setText('order-step2-title', data.orderForm.step2Title);
+            setText('label-name', data.orderForm.labels.name);
+            setText('label-address', data.orderForm.labels.address);
+            setText('label-phone', data.orderForm.labels.phone);
+            setText('label-size', data.orderForm.labels.size);
+            setText('label-color', data.orderForm.labels.color);
+            setText('label-shipping', data.orderForm.labels.shippingTitle); // fixed key
+
+            document.getElementById('customer_name').placeholder = data.orderForm.labels.namePlaceholder;
+            document.getElementById('customer_address').placeholder = data.orderForm.labels.addressPlaceholder;
+            document.getElementById('customer_phone').placeholder = data.orderForm.labels.phonePlaceholder;
+
+            // Generate Products
+            const productContainer = document.getElementById('product-list-container');
+            if (productContainer && data.orderForm.products) {
+                productContainer.innerHTML = data.orderForm.products.map((prod, index) => `
+                    <label class="block cursor-pointer group">
+                        <input class="hidden peer" name="product" type="radio" value="${prod.id}" data-price="${prod.price}" ${index === 0 ? 'checked' : ''} />
+                        <div class="flex items-center gap-4 p-4 rounded-xl border-2 border-slate-200 peer-checked:border-brand peer-checked:bg-blue-50 transition-all">
+                            <img alt="${prod.name}" class="w-16 h-16 rounded-lg object-cover" src="${prod.image}" />
+                            <div class="flex-1">
+                                <h4 class="font-bold">${prod.name} × ১</h4>
+                                <p class="text-sm text-slate-500">${prod.price}৳</p>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <button type="button" class="w-8 h-8 rounded bg-slate-200 flex items-center justify-center">-</button>
+                                <span class="font-bold px-2">1</span>
+                                <button type="button" class="w-8 h-8 rounded bg-slate-200 flex items-center justify-center">+</button>
+                            </div>
+                        </div>
+                    </label>
+                `).join('');
+            }
+
+            // Generate Shipping Options
+            const shippingContainer = document.getElementById('shipping-options-container');
+            if (shippingContainer && data.orderForm.shippingOptions) {
+                shippingContainer.innerHTML = data.orderForm.shippingOptions.map((opt, index) => `
+                    <label class="flex items-center justify-between cursor-pointer ${index > 0 ? 'border-t border-slate-100 pt-3' : ''}">
+                        <div class="flex items-center gap-2">
+                            <input class="text-brand focus:ring-brand" name="shipping" type="radio" value="${opt.price}" ${index === 0 ? 'checked' : ''} />
+                            <span>${opt.label}</span>
+                        </div>
+                        <span class="font-bold">${opt.price}৳</span>
+                    </label>
+                `).join('');
+            }
+
+            // Summary
+            setText('summary-title', data.orderForm.summary.title);
+            setText('summary-cod-text', data.orderForm.summary.codText);
+            setText('summary-cod-label', data.orderForm.summary.codLabel);
+            setText('summary-disclaimer', data.orderForm.summary.disclaimer);
+            setHTML('order-btn-text', data.orderForm.summary.buttonText);
+
+            // Initialize Total Calculation Logic
+            updateTotal();
+
+            // Event Listeners for Dynamic Elements
+            document.getElementById('order-form').addEventListener('change', (e) => {
+                if (e.target.name === 'product' || e.target.name === 'shipping') {
+                    updateTotal();
+                }
+            });
+        }
+
+        function updateTotal() {
+            const product = document.querySelector('input[name="product"]:checked');
+            const shipping = document.querySelector('input[name="shipping"]:checked');
+
+            if (product && shipping) {
+                const price = parseInt(product.dataset.price || 0);
+                const shipPrice = parseInt(shipping.value || 0);
+                const total = price + shipPrice;
+
+                const btnText = document.getElementById('order-btn-text');
+                if (btnText) btnText.parentElement.innerHTML = `<span class="material-icons">lock</span> ${siteContent.orderForm?.summary?.buttonText || 'অর্ডার করুন'} ${total}৳`;
+            }
+        }
+
+        // Helpers
+        function setText(id, text) {
+            const el = document.getElementById(id);
+            if (el) el.innerText = text || '';
+        }
+        function setHTML(id, html) {
+            const el = document.getElementById(id);
+            if (el) el.innerHTML = html || '';
+        }
+
+        // Order Submission
+        document.getElementById('order-btn').addEventListener('click', async (e) => {
+            e.preventDefault();
+            const btn = e.target.closest('button');
+            const originalText = btn.innerHTML;
+
+            // Gather Data
+            const name = document.getElementById('customer_name').value;
+            const address = document.getElementById('customer_address').value;
+            const phone = document.getElementById('customer_phone').value;
+
+            // Get selected product
+            const productInput = document.querySelector('input[name="product"]:checked');
+            const productWrapper = productInput ? productInput.closest('label') : null;
+            const productText = productWrapper ? productWrapper.querySelector('h4').innerText : 'Unknown Product';
+            const productPrice = productInput ? parseInt(productInput.dataset.price) : 0;
+
+            // Get selected size
+            const sizeInput = document.querySelector('input[name="size"]:checked');
+            const size = sizeInput ? sizeInput.parentElement.innerText.replace('*', '').trim() : 'N/A';
+
+            // Get selected colors
+            const colors = Array.from(document.querySelectorAll('input[name="color"]:checked'))
+                .map(cb => cb.value).join(', ');
+
+            // Get shipping
+            const shippingInput = document.querySelector('input[name="shipping"]:checked');
+            const shippingCost = shippingInput ? parseInt(shippingInput.value) : 0;
+            const total = productPrice + shippingCost;
+
+            // Validation
+            if (!name || !address || !phone) {
+                alert('অনুগ্রহ করে নাম, ঠিকানা এবং মোবাইল নম্বর পূরণ করুন।');
+                return;
+            }
+
+            const productSummary = `${productText} - Size: ${size} - Color: ${colors}`;
+
+            btn.disabled = true;
+            btn.innerHTML = 'অর্ডার প্রসেসিং হচ্ছে...';
+
+            try {
+                // Determine API URL
+                const apiUrl = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1'
+                    ? 'http://localhost:8787/api/order'
+                    : '/api/order';
+
+                const response = await fetch(apiUrl, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        customer_name: name,
+                        customer_address: address,
+                        customer_phone: phone,
+                        product_summary: productSummary,
+                        total_price: total
+                    })
+                });
+
+                const result = await response.json();
+
+                if (result.success) {
+                    // Success UI
+                    document.querySelector('main').innerHTML = `
+                        <div class="text-center py-20">
+                            <span class="material-icons text-6xl text-green-500 mb-4">check_circle</span>
+                            <h2 class="text-3xl font-bold mb-4">অর্ডার সফল হয়েছে!</h2>
+                            <p class="text-xl">আপনার অর্ডার আইডি: #${result.orderId}</p>
+                            <p class="mt-4">আমাদের প্রতিনিধি শীঘ্রই আপনার সাথে যোগাযোগ করবে।</p>
+                        </div>
+                    `;
+                    document.getElementById('order-form')?.scrollIntoView();
+                } else {
+                    alert('অর্ডার করতে সমস্যা হয়েছে। আবার চেষ্টা করুন।');
+                    btn.disabled = false;
+                    btn.innerHTML = originalText;
+                }
+            } catch (err) {
+                console.error(err);
+                alert('নেটওয়ার্ক সমস্যা। আবার চেষ্টা করুন।');
+                btn.disabled = false;
+                btn.innerHTML = originalText;
             }
         });
     </script>

@@ -1,6 +1,9 @@
 import { Hono } from 'hono'
 import { cors } from 'hono/cors'
 import content from '../content.json'
+import { render } from './renderer'
+// @ts-ignore
+import clientJs from './client.js'
 
 type Bindings = {
     DB: D1Database
@@ -14,7 +17,19 @@ app.use('*', cors({
     allowHeaders: ['Content-Type'],
 }))
 
-// Serve dynamic content for the landing page
+// Serve the Landing Page (SSR)
+app.get('/', (c) => {
+    const html = render(content);
+    return c.html(html);
+})
+
+app.get('/client.js', (c) => {
+    return c.body(clientJs, 200, {
+        'Content-Type': 'text/javascript',
+    })
+})
+
+// Serve dynamic content for editing (if needed in future)
 app.get('/api/content', (c) => {
     return c.json(content)
 })

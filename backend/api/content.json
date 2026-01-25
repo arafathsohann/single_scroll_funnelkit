@@ -1,26 +1,223 @@
 {
-    "hero": {
-        "headline": "Premium Glace Cotton Cargo Pants",
-        "subheadline": "Comfort meets style in our new collection.",
-        "cta": "Shop Now"
+    "meta": {
+        "title": "Glace Cotton - Premium Cargo Pants Test"
     },
-    "features": [
+    "header": {
+        "logoText": "GLACE COTTON",
+        "headline": "অগ্রিম টাকা ছাড়াই অর্ডার করুন <br /> সময় মাত্র অল্প test",
+        "countdown": {
+            "labels": [
+                "Hours",
+                "Minutes",
+                "Seconds",
+                "Days"
+            ]
+        },
+        "cta": {
+            "text": "অফার শেষ হবার আগেই",
+            "buttonText": "অর্ডার করতে চাই"
+        }
+    },
+    "hero": {
+        "headline": "অরিজিনাল চায়না ডুগি ফেব্রিক্স সাথে ১০% স্টিজ",
+        "subheadline": "Premium Cargo Pants for man solid colour",
+        "showcaseImages": [
+            {
+                "src": "https://lh3.googleusercontent.com/aida-public/AB6AXuD4Zt_qAtcHiBpl2XqnMQqRSU_nhxXkUcPK-BX48QoHxS30KyeeTvW0Lrqt24OkUR_6TliUmTjzzLZcKF8cXgk5PrgFCdvpMRQXSWQ9WHI1xsKRXvatXfuyT4XKw3VIVrMyUfmZYf0n73_z_OiXQ33b7RIubdY7d4JcVc2LfPaByC-T1z9rKW5PvJI1cC7maSnMono62VMmqamhylHoz-txTS6-Ew9KN4EWVYCLfVyn7vQ1LyvhycivFSdILHRdy8W5cjUEpVk8QPg",
+                "alt": "Green Cargo Pants"
+            },
+            {
+                "src": "https://lh3.googleusercontent.com/aida-public/AB6AXuDIBgywTX7Etbpi6iu4oIpnHYFJP1QAobZwItMfv5D6YAV-tFNrPD0VGYpykVCUmXF2OFElxESv2RXflfZkBJ7dx7fy6nB8bU5MEKgvnF6EfcjtEQAwUHiOE0DAz0FMGwK2OqTQrhPTUgsFXTSVSTnGlDbOOa2xKcPkR95DNpMEOj0ahCr9feB4Z6lv32x_V_ab2d8N1HDwoXtjvv3Z_m75DoXYox_dTzl-wW2ea6xX0gRiquh1_BFe1-JWDJ2S9x6ngUOUZdg7Qpg",
+                "alt": "Grey Cargo Pants"
+            },
+            {
+                "src": "https://lh3.googleusercontent.com/aida-public/AB6AXuBgKkC1e2EctdyUlvEW4s635DtmKNGJ2lN9161fiA-we4N1ippCBJKz6YJRr3iTkbbLB1dAYyJj6Qd2a1oH7gv-gRKXBeROiSxA7vF36rzp2qDy9uvxdsEYY2s-0yc-UV6JSE2ZJZu0mKx3IM-3QTlmTCMyFtbbnznTXLZEhlf1BioF-GAxr6Oz6DdQ6IdxMabGE8iGXchbA4qU74towstmjh-8JdrZ_VYuv--yU5GZ3SSLAwMnVSgc5BeEYKpKz2-rB1iys2094aE",
+                "alt": "Khaki Cargo Pants"
+            },
+            {
+                "src": "https://lh3.googleusercontent.com/aida-public/AB6AXuBJhYomIyjXNNe101lWnGdwWIZLI871_fntNh1j6MyERFNNAQhNrm3W_v8BbWQVrIty1KyCNrpwS83AlzzxofYx1NkH5xGuczHHzJjvQeooiXQGYJvZNbTJEMJKX7rek2AMPH3yyZyMEjHqX-n7G8JSEM1jK5OW2QDca60iTumCruH-83Z0hreHf5NOpNhNiqgEs3Kdc7kdGxvK7PL35G1zTwwdVB7JOcA-a5jbvqJZT14Sj6t2QRZjEkz4bZVNbJuUNCP4iPSO05A",
+                "alt": "Black Cargo Pants"
+            }
+        ],
+        "valueProps": {
+            "title": "কেন আমাদের থেকে প্রোডাক্ট কিনবেন?",
+            "items": [
+                "আমরা দিচ্ছি নিজস্ব ফ্যাক্টরিতে তৈরি প্রিমিয়াম কোয়ালিটি পণ্য, যা বাজারের অন্য কোথাও পাবেন না।",
+                "আমাদের প্রোডাক্টে ব্যবহৃত ফেব্রিক – চাইনিজ ডুগি (১০% স্টিচ) – যা খুব সফট ও আরামদায়ক।",
+                "ফ্যাশন ও ফিনিশিংয়ে আমরা আপসহীন। প্রতিটি কার্গো প্যান্ট নিখুঁতভাবে তৈরি।",
+                "আমরা দিচ্ছি বিশেষ কম্বো অফার, যেখানে আপনি কম দামে আরও ভালো কিছু পাচ্ছেন।"
+            ]
+        },
+        "mainCta": "অর্ডার করতে চাই"
+    },
+    "comboOffer": {
+        "image": "https://lh3.googleusercontent.com/aida-public/AB6AXuA-vdr327WDAQndrnJj7iY3AYfrs5Na6PycPCqfil2IjwVRDRZ9l9qI14ODMS89JmmAmliRwTJt3hOxIkXrBQzd0zOJWchWUGe4kFzsfYiRS3OQhBy1U3rGQiPisftXDWo3Af7Jvu75sfdWirN-erKdhkRuEq4n66DTfJkmSyqkll3zL97mpH7noiWMTKVDR7nl2wnhGEM1M6_VXk8_Rd7Ky8P5YDcKVjfR73jWSlb4jm697OkfWXO9UlnlUQZl1EfZK6uRpyOIir8",
+        "badge": {
+            "line1": "২ পিসের কম্বো মাত্র",
+            "line2": "১৩০০ টাকা"
+        },
+        "details": {
+            "title": "Cargo Pants সম্পর্কে বিস্তারিত",
+            "description": "আরামদায়ক ও স্টাইলিশ কার্গো প্যান্ট – একাধিক পকেট, টেকসই কাপড় ও মডার্ন ডিজাইনে তৈরি। দৈনন্দিন ব্যবহার বা আউটডোর অ্যাক্টিভিটির জন্য আদর্শ।",
+            "features": [
+                "১০০% কোয়ালিটিফুল",
+                "১০০% অরিজিনাল চামড়া (ট্যাগ)",
+                "প্রিমিয়াম কোয়ালিটির নিশ্চয়তা",
+                "Fabric: Chinese Dughi Fabrics (10% Stretch)",
+                "Fly Zipper",
+                "5 Box Pocket Cargo Style with Snap Button"
+            ],
+            "cta": "অর্ডার করতে চাই"
+        }
+    },
+    "pricing": [
         {
-            "title": "Durable Fabric",
-            "description": "Made with high-quality glace cotton that lasts."
+            "text": "২ পিস কার্গো প্যান্টের মূল্য",
+            "price": "১৩০০",
+            "unit": "টাকা"
         },
         {
-            "title": "Modern Fit",
-            "description": "Tailored for a sleek, contemporary look."
-        },
-        {
-            "title": "Functional Pockets",
-            "description": "Spacious cargo pockets for your essentials."
+            "text": "৩ পিস কার্গো প্যান্টের মূল্য",
+            "price": "১৮০০",
+            "unit": "টাকা"
         }
     ],
-    "product": {
-        "name": "Cargo Pants Model X",
-        "price": "1200",
-        "currency": "৳"
+    "trustBadge": {
+        "text": "অবশ্যই ১০০% কনফার্ম হয়ে অর্ডারটি কনফার্ম করবেন। আমরা আপনার থেকে অগ্রিম কোনো টাকা নিচ্ছি না। কোনো কারণে যদি প্রোডাক্ট না রাখতে চান ডেলিভারি চার্জ দিয়ে ব্যাক করে দিবেন।"
+    },
+    "sizeChart": {
+        "title": "Size Chart - In Inches (Expected Deviation <3%)",
+        "columns": [
+            "Size",
+            "Waist",
+            "Hip",
+            "Thai",
+            "Length"
+        ],
+        "rows": [
+            {
+                "size": "M",
+                "waist": "30-32",
+                "hip": "19",
+                "thai": "23",
+                "length": "35"
+            },
+            {
+                "size": "L",
+                "waist": "34-36",
+                "hip": "22",
+                "thai": "24",
+                "length": "37"
+            },
+            {
+                "size": "XL",
+                "waist": "38-40",
+                "hip": "23",
+                "thai": "25",
+                "length": "39"
+            },
+            {
+                "size": "XXL",
+                "waist": "42-48",
+                "hip": "28",
+                "thai": "30",
+                "length": "42"
+            }
+        ],
+        "footer": {
+            "title": "5 pocket cargo pants",
+            "details": "More details- 01832-930900"
+        }
+    },
+    "testimonials": {
+        "title": "What Our Customers Say",
+        "list": [
+            {
+                "name": "Rafiqul J.",
+                "initials": "RJ",
+                "image": "https://lh3.googleusercontent.com/aida-public/AB6AXuD4Zt_qAtcHiBpl2XqnMQqRSU_nhxXkUcPK-BX48QoHxS30KyeeTvW0Lrqt24OkUR_6TliUmTjzzLZcKF8cXgk5PrgFCdvpMRQXSWQ9WHI1xsKRXvatXfuyT4XKw3VIVrMyUfmZYf0n73_z_OiXQ33b7RIubdY7d4JcVc2LfPaByC-T1z9rKW5PvJI1cC7maSnMono62VMmqamhylHoz-txTS6-Ew9KN4EWVYCLfVyn7vQ1LyvhycivFSdILHRdy8W5cjUEpVk8QPg",
+                "text": "\"The quality of this Glace Cotton is amazing. The 10% stretch makes it so comfortable for all-day wear. Highly recommended!\""
+            },
+            {
+                "name": "Ahsan S.",
+                "initials": "AS",
+                "image": "https://lh3.googleusercontent.com/aida-public/AB6AXuDIBgywTX7Etbpi6iu4oIpnHYFJP1QAobZwItMfv5D6YAV-tFNrPD0VGYpykVCUmXF2OFElxESv2RXflfZkBJ7dx7fy6nB8bU5MEKgvnF6EfcjtEQAwUHiOE0DAz0FMGwK2OqTQrhPTUgsFXTSVSTnGlDbOOa2xKcPkR95DNpMEOj0ahCr9feB4Z6lv32x_V_ab2d8N1HDwoXtjvv3Z_m75DoXYox_dTzl-wW2ea6xX0gRiquh1_BFe1-JWDJ2S9x6ngUOUZdg7Qpg",
+                "text": "\"Perfect fit! I was worried about the size but the chart was very accurate. The fabric feels premium and the pockets are very useful.\""
+            },
+            {
+                "name": "Mahmud K.",
+                "initials": "MK",
+                "image": "https://lh3.googleusercontent.com/aida-public/AB6AXuBgKkC1e2EctdyUlvEW4s635DtmKNGJ2lN9161fiA-we4N1ippCBJKz6YJRr3iTkbbLB1dAYyJj6Qd2a1oH7gv-gRKXBeROiSxA7vF36rzp2qDy9uvxdsEYY2s-0yc-UV6JSE2ZJZu0mKx3IM-3QTlmTCMyFtbbnznTXLZEhlf1BioF-GAxr6Oz6DdQ6IdxMabGE8iGXchbA4qU74towstmjh-8JdrZ_VYuv--yU5GZ3SSLAwMnVSgc5BeEYKpKz2-rB1iys2094aE",
+                "text": "\"Got the 2-piece combo and it's a steal for this price. The stitching is perfect and color doesn't fade after wash. Best cargo in BD.\""
+            },
+            {
+                "name": "Tanvir N.",
+                "initials": "TN",
+                "image": "https://lh3.googleusercontent.com/aida-public/AB6AXuBJhYomIyjXNNe101lWnGdwWIZLI871_fntNh1j6MyERFNNAQhNrm3W_v8BbWQVrIty1KyCNrpwS83AlzzxofYx1NkH5xGuczHHzJjvQeooiXQGYJvZNbTJEMJKX7rek2AMPH3yyZyMEjHqX-n7G8JSEM1jK5OW2QDca60iTumCruH-83Z0hreHf5NOpNhNiqgEs3Kdc7kdGxvK7PL35G1zTwwdVB7JOcA-a5jbvqJZT14Sj6t2QRZjEkz4bZVNbJuUNCP4iPSO05A",
+                "text": "\"I use these for my bike tours and they are rugged yet soft. Very stylish and the fit is modern. Will buy more colors soon.\""
+            }
+        ]
+    },
+    "orderForm": {
+        "step1Title": "আপনার Product সিলেক্ট করুন",
+        "products": [
+            {
+                "id": "p1",
+                "name": "প্রিমিয়াম কার্গো প্যান্ট",
+                "price": "440",
+                "image": "https://lh3.googleusercontent.com/aida-public/AB6AXuDJ1eNii1O-hY9fUTWFP6WiSVnV_Mkwa1u3WDolKy1do-NbLjyDQgLcSd4ZdlgW797-WTZyiMsTBVHxdXpiQG0SSD6XK-AQ9aTlubWvXjIJo-MQH_1679YSGpwUWGcqiGDpgLQAqKVVq3InxyVExwbksNtyPJ5TEPRdsXVaeqrqY1vJt4XDQ2DkrCBQ-fhnFnQW-eKQTdekbjA2JcDrSaUPm8IjIGTGh4zF5v5ujWOwxZChQ6lCEXPTdwdc1Jgjdm3PsX5a0EBmJaw"
+            },
+            {
+                "id": "p2",
+                "name": "প্রিমিয়াম কার্গো প্যান্ট কম্বো - (২-প্যাক)",
+                "price": "1300",
+                "image": "https://lh3.googleusercontent.com/aida-public/AB6AXuDyrdAXv69DAJpULhPaBasbIHgz3JRq4-1qLgXG8TsagQvaXIYT4jlcdP5VWwoqQtnK3jTYr8Bh4NzIZuHoGNaP8sQsXmOPtZ2Ygm8rlrk8HKlG-eoGfY1wq5eVoXZoiduMOiLTufdqeJp1LXsi2qh1ZSjUdf8akVZjd0NIcBO1P0kMSwbJ0ntyvGkYqSYypTIgmJvb7YtulCZfK-GktRCkLMoX1khbjKRBBXO7aL_2yDWSjZx0BjHU8URNfmwIWVEoYHh3Da1ffs8"
+            },
+            {
+                "id": "p3",
+                "name": "প্রিমিয়াম কার্গো প্যান্ট কম্বো - (৩-প্যাক)",
+                "price": "1900",
+                "image": "https://lh3.googleusercontent.com/aida-public/AB6AXuDy_idZ3U2y2NAiNlUmvV9EYqVavgg09KazcMoCInhss83og4OzIcx2nTzIMi43pifoTVSaKnv9_ad23zo-zRSsZT6av-Fe8N_UAgCgthtp4Z1SBxFcS3wQA4v8Cs42UVDK8RnSwo616sdMLaPCiBd5IIZ-AiA4o5BC1X_9BSPZ_wU9BLJXION65QbkfbAmQHeAb69o7u8fr7tqgVflGxxsBSxCTqA2LIfs_Awh8RXx__xWS_XnSZW7E_spmo4PzWLzdp61oOL9_BA"
+            }
+        ],
+        "step2Title": "অর্ডার করতে ফর্মটি পুরন করুন",
+        "labels": {
+            "name": "আপনার নাম লিখুন *",
+            "namePlaceholder": "যেমনঃ মোঃ রফিকুল ইসলাম",
+            "address": "আপনার গ্রাম, পোস্ট অফিস, থানা, জেলা লিখুন *",
+            "addressPlaceholder": "যেমনঃ বাড়ি #১২, রোড #০৫, ধানমন্ডি, ঢাকা",
+            "phone": "আপনার মোবাইল নং লিখুন *",
+            "phonePlaceholder": "০১৮XXXXXXXX",
+            "size": "প্যান্টের সাইজ *",
+            "color": "কালার সিলেকশন *",
+            "shippingTitle": "Shipping"
+        },
+        "shippingOptions": [
+            {
+                "label": "ঢাকার ভিতরে ডেলিভারি চার্জ:",
+                "price": "70"
+            },
+            {
+                "label": "ঢাকার বাহিরে ডেলিভারি চার্জ:",
+                "price": "120"
+            }
+        ],
+        "summary": {
+            "title": "আপনার অর্ডার",
+            "subtotal": "Subtotal",
+            "total": "Total",
+            "codText": "সম্পূর্ণ ক্যাশ অন ডেলিভারি",
+            "codLabel": "পণ্য হাতে পেয়ে টাকা পরিশোধ করুন",
+            "disclaimer": "Your personal data will be used to process your order, support your experience throughout this website, and for other purposes described in our privacy policy.",
+            "buttonText": "অর্ডার করুন"
+        }
+    },
+    "footer": {
+        "contactTitle": "যেকোনো প্রয়োজনে কল করুন",
+        "phoneNumbers": [
+            "01832-930900",
+            "01334-260075"
+        ],
+        "copyright": "© 2024 Glace Cotton. All rights reserved."
     }
 }
