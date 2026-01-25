@@ -1,15 +1,14 @@
 {
-  "name": "landing-page-funnel",
+  "name": "funnel-system",
   "version": "1.0.0",
   "private": true,
-  "workspaces": [
-    "worker",
-    "dashboard",
-    "shared"
-  ],
   "scripts": {
-    "dev:worker": "npm run dev -w worker",
-    "deploy:worker": "npm run deploy -w worker",
-    "dev:dashboard": "npm run dev -w dashboard"
+    "dev": "concurrently \"npm run dev:frontend\" \"npm run dev:backend\" \"npm run dev:dashboard\"",
+    "dev:frontend": "cd frontend && npm install && npm run dev",
+    "dev:backend": "cd backend/api && npm install && npm run dev",
+    "dev:dashboard": "cd backend/dashboard && npm install && npm run dev"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
   }
 }

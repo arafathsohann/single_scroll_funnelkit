@@ -1,0 +1,26 @@
+{
+    "hero": {
+        "headline": "Premium Glace Cotton Cargo Pants",
+        "subheadline": "Comfort meets style in our new collection.",
+        "cta": "Shop Now"
+    },
+    "features": [
+        {
+            "title": "Durable Fabric",
+            "description": "Made with high-quality glace cotton that lasts."
+        },
+        {
+            "title": "Modern Fit",
+            "description": "Tailored for a sleek, contemporary look."
+        },
+        {
+            "title": "Functional Pockets",
+            "description": "Spacious cargo pockets for your essentials."
+        }
+    ],
+    "product": {
+        "name": "Cargo Pants Model X",
+        "price": "1200",
+        "currency": "৳"
+    }
+}
