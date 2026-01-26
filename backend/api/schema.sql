@@ -33,3 +33,13 @@ CREATE TABLE orders (
 
 -- Initial Data
 INSERT INTO pages (slug, title) VALUES ('default', 'Glace Cotton Cargo Pants');
+
+CREATE TABLE IF NOT EXISTS admin_users (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    username TEXT NOT NULL UNIQUE,
+    password_hash TEXT NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+-- Initial admin user (password: admin)
+INSERT OR IGNORE INTO admin_users (username, password_hash) 
+VALUES ('admin', '8c6976e5b5410415bde908bd4dee15dfb167a9c873fc4bb8a81f6f2ab448a918');
