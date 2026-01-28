@@ -3,6 +3,7 @@ import { cors } from 'hono/cors'
 import { ContentService, PageConfig } from './contentService'
 import { render } from './renderer'
 import { auth } from './auth'
+import initialContent from '../content.json'
 import { Layout, DashboardView, InventoryView, OrdersView, ProfileView, EditFunnelView, LoginView } from './dashboard'
 // @ts-ignore
 import clientJs from './client.js'
@@ -26,9 +27,9 @@ app.use('*', cors({
 
 // Serve the Landing Page (SSR)
 app.get('/', async (c) => {
-    // Default to 'default' slug for the root path
+    // Default to 't1' slug for the root path
     const contentService = new ContentService(c.env.LANDING_PAGE_CONTENT);
-    const pageConfig = await contentService.getPage('default');
+    const pageConfig = await contentService.getPage('t1');
 
     if (!pageConfig) {
         return c.text('Landing page not found', 404);
@@ -62,7 +63,7 @@ app.get('/client.js', (c) => {
 // Serve dynamic content for editing
 app.get('/api/content', async (c) => {
     // Default to 'default' slug for now, or allow query param?
-    const slug = c.req.query('slug') || 'default';
+    const slug = c.req.query('slug') || 't1';
     const contentService = new ContentService(c.env.LANDING_PAGE_CONTENT);
     const pageConfig = await contentService.getPage(slug);
 
@@ -72,7 +73,7 @@ app.get('/api/content', async (c) => {
 // Admin: Save content
 app.post('/admin/api/content', auth.middleware, async (c) => {
     const body = await c.req.json();
-    const slug = body.slug || 'default';
+    const slug = body.slug || 't1';
     const template = body.template || 'commerce-v1';
 
     const contentService = new ContentService(c.env.LANDING_PAGE_CONTENT);
@@ -174,12 +175,96 @@ app.post('/admin/profile', async (c) => {
     }
 });
 
-app.get('/admin/editor', async (c) => {
+// --- Editor Assets ---
+// @ts-ignore
+import editorJs from './editor.js'
+// @ts-ignore
+import editorCss from './editor.css'
+
+app.get('/editor.js', (c) => c.body(editorJs, 200, { 'Content-Type': 'text/javascript' }))
+app.get('/editor.css', (c) => c.body(editorCss, 200, { 'Content-Type': 'text/css' }))
+
+// --- Editor Page ---
+app.get('/admin/editor/:slug?', async (c) => {
+    const slug = c.req.query('slug') || 't1';
     const contentService = new ContentService(c.env.LANDING_PAGE_CONTENT);
-    const pageConfig = await contentService.getPage('default');
-    const html = render(pageConfig ? pageConfig.data : {});
-    return c.html(Layout(EditFunnelView(html), 'editor'));
+
+    // Load DRAFT content to render
+    const draftConfig = await contentService.getDraft(slug);
+
+    // Fallback if no draft/page exists: Use initialContent from file to SEED the editor
+    const data = draftConfig ? draftConfig.data : initialContent;
+
+    const pageHtml = render(data);
+
+    // Inject Editor Scripts & State
+    // We append them to body
+    const editorScripts = `
+        <link rel="stylesheet" href="/editor.css">
+        <script>
+            window.__PAGE_SLUG__ = "${slug}";
+            window.__EDITOR_STATE__ = ${JSON.stringify(data)};
+        </script>
+        <script src="/editor.js"></script>
+    `;
+
+    const fullHtml = pageHtml.replace('</body>', `${editorScripts}</body>`);
+    return c.html(fullHtml);
 });
+
+// --- Editor API ---
+
+app.post('/admin/api/draft', auth.middleware, async (c) => {
+    const body = await c.req.json();
+    const { slug, data } = body;
+
+    if (!slug || !data) return c.json({ error: 'Missing slug or data' }, 400);
+
+    const contentService = new ContentService(c.env.LANDING_PAGE_CONTENT);
+
+    // We should probably get the existing config to preserve template/meta if possible
+    // For now, simple update or create
+    const existing = await contentService.getDraft(slug); // or getPage if draft missing
+
+    const newConfig: PageConfig = {
+        slug,
+        template: existing?.template || 'commerce-v1',
+        version: (existing?.version || 0) + 1,
+        data: data
+    };
+
+    await contentService.saveDraft(newConfig);
+    return c.json({ success: true });
+});
+
+app.post('/admin/api/publish', auth.middleware, async (c) => {
+    const body = await c.req.json();
+    const { slug, data } = body;
+
+    if (!slug) return c.json({ error: 'Missing slug' }, 400);
+
+    const contentService = new ContentService(c.env.LANDING_PAGE_CONTENT);
+    try {
+        // If data is provided, save it as a draft first (or update page directly?)
+        // Let's save as draft to maintain history/consistency, then publish.
+        if (data) {
+            const existing = await contentService.getDraft(slug);
+            const newConfig: PageConfig = {
+                slug,
+                template: existing?.template || 'commerce-v1',
+                version: (existing?.version || 0) + 1,
+                data: data
+            };
+            await contentService.saveDraft(newConfig);
+        }
+
+        await contentService.publishDraft(slug);
+        return c.json({ success: true });
+    } catch (e: any) {
+        return c.json({ error: e.message }, 500);
+    }
+});
+
 
 // --- End Admin Routes ---
 

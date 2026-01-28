@@ -1,0 +1,75 @@
+
+#editor-toolbar {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #1e293b;
+    color: white;
+    padding: 12px 24px;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.5);
+    z-index: 9999;
+    font-family: 'Inter', sans-serif;
+}
+
+#editor-toolbar .logo {
+    font-weight: 700;
+    font-size: 14px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    color: #94a3b8;
+}
+
+#editor-toolbar .status {
+    font-size: 13px;
+    font-weight: 600;
+}
+
+#editor-toolbar .actions {
+    display: flex;
+    gap: 12px;
+}
+
+#editor-toolbar button {
+    background: #334155;
+    border: none;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+#editor-toolbar button:hover {
+    background: #475569;
+}
+
+#editor-toolbar button.primary {
+    background: #f2a20d; /* Brand primary */
+    color: white;
+}
+
+#editor-toolbar button.primary:hover {
+    background: #d98e0a;
+}
+
+.editable-element {
+    outline: 2px dashed transparent;
+    transition: outline 0.2s;
+}
+
+.editable-element:hover {
+    outline: 2px dashed #f2a20d;
+    cursor: text;
+}
+
+.editable-element:focus {
+    outline: 2px solid #f2a20d;
+    background: rgba(242, 162, 13, 0.1);
+}

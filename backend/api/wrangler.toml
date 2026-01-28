@@ -12,7 +12,7 @@ database_id = "to-be-replaced-after-creation"
 
 [[rules]]
 type = "Text"
-globs = ["**/client.js"]
+globs = ["**/client.js", "**/editor.js", "**/editor.css"]
 fallthrough = false
 
 [[kv_namespaces]]

@@ -1,5 +1,4 @@
 import { KVNamespace } from '@cloudflare/workers-types'
-import defaultContent from '../content.json'
 
 // Define the structure for a stored page
 export interface PageConfig {
@@ -33,17 +32,6 @@ export class ContentService {
             console.error(`Error fetching key ${key} from KV:`, e);
         }
 
-        // Fallback for default page if not found in KV
-        if (slug === 'default' || slug === 'home') {
-            console.log('Serving fallback content from content.json');
-            return {
-                slug: 'default',
-                template: 'commerce-v1',
-                version: 1,
-                data: defaultContent
-            };
-        }
-
         return null; // Page not found
     }
 
@@ -55,6 +43,51 @@ export class ContentService {
 
         const key = `page:${page.slug}`;
         await this.kv.put(key, JSON.stringify(page));
+    }
+
+    /**
+     * Get the *Draft* version of a page.
+     * If no draft exists, falls back to the published page (or default fallback).
+     */
+    async getDraft(slug: string): Promise<PageConfig | null> {
+        const key = `draft:${slug}`;
+
+        // Try fetching draft from KV
+        try {
+            const stored = await this.kv.get(key, 'json');
+            if (stored) {
+                return stored as PageConfig;
+            }
+        } catch (e) { /* ignore */ }
+
+        // Fallback to published page
+        return this.getPage(slug);
+    }
+
+    /**
+     * Save a Draft version.
+     */
+    async saveDraft(page: PageConfig): Promise<void> {
+        if (!page.slug) throw new Error('Page slug is required');
+        const key = `draft:${page.slug}`;
+        await this.kv.put(key, JSON.stringify(page));
+    }
+
+    /**
+     * Publish a draft: Copy draft content to published page key.
+     */
+    async publishDraft(slug: string): Promise<void> {
+        const draftKey = `draft:${slug}`;
+        const draft = await this.kv.get(draftKey, 'json') as PageConfig | null;
+
+        if (!draft) {
+            throw new Error('No draft found to publish');
+        }
+
+        // Save as published page
+        await this.savePage(draft);
+
+        // Optional: Delete draft after publish? Or keep it? keeping it is safer/easier.
     }
 
     /**

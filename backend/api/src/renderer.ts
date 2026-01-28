@@ -4,6 +4,9 @@ export function render(data: any): string {
     // Escape JSON for script injection
     const safeJson = JSON.stringify(data).replace(/</g, '\\u003c');
 
+    // Helper for data-binding
+    const b = (path: string) => `data-bind="${path}"`;
+
     return `<!DOCTYPE html>
 <html class="light" lang="bn">
 
@@ -66,9 +69,9 @@ export function render(data: any): string {
             <div class="flex flex-col items-center mb-6">
                 <div class="text-3xl font-bold tracking-tighter text-brand flex items-center gap-2">
                     <span class="material-icons text-4xl">inventory_2</span>
-                    <span id="header-logo">${data.header.logoText}</span>
+                    <span id="header-logo" ${b('header.logoText')}>${data.header.logoText}</span>
                 </div>
-                <h1 id="header-headline" class="text-2xl md:text-3xl font-bold text-red-600 mt-4">${data.header.headline}</h1>
+                <h1 id="header-headline" class="text-2xl md:text-3xl font-bold text-red-600 mt-4" ${b('header.headline')}>${data.header.headline}</h1>
             </div>
             <div class="flex justify-center gap-3 mb-8">
                 <div class="flex flex-col items-center">
@@ -90,35 +93,35 @@ export function render(data: any): string {
             </div>
             <div
                 class="bg-brand text-white py-3 px-6 rounded-lg flex flex-wrap items-center justify-between gap-4 shadow-lg">
-                <span id="header-cta-text" class="text-lg font-semibold">${data.header.cta.text}</span>
+                <span id="header-cta-text" class="text-lg font-semibold" ${b('header.cta.text')}>${data.header.cta.text}</span>
                 <a id="header-cta-btn"
                     class="bg-primary hover:bg-red-700 text-white px-6 py-2 rounded-full font-bold flex items-center gap-2 transition-transform active:scale-95"
                     href="#order-form">
-                    ${data.header.cta.buttonText} <span class="material-icons text-sm">shopping_cart</span>
+                    <span ${b('header.cta.buttonText')}>${data.header.cta.buttonText}</span> <span class="material-icons text-sm">shopping_cart</span>
                 </a>
             </div>
         </div>
     </header>
     <main class="max-w-5xl mx-auto px-4 py-12">
         <section class="text-center mb-16">
-            <h2 id="hero-headline" class="text-2xl md:text-3xl font-bold text-red-600 mb-2">${data.hero.headline}</h2>
-            <p id="hero-subheadline" class="text-slate-600 mb-8">${data.hero.subheadline}</p>
+            <h2 id="hero-headline" class="text-2xl md:text-3xl font-bold text-red-600 mb-2" ${b('hero.headline')}>${data.hero.headline}</h2>
+            <p id="hero-subheadline" class="text-slate-600 mb-8" ${b('hero.subheadline')}>${data.hero.subheadline}</p>
             <div id="hero-showcase" class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-10">
-                ${data.hero.showcaseImages ? data.hero.showcaseImages.map((img: any) => `
+                ${data.hero.showcaseImages ? data.hero.showcaseImages.map((img: any, i: number) => `
                     <div class="bg-white p-2 rounded-xl shadow-sm border border-slate-100">
-                        <img alt="${img.alt}" class="rounded-lg w-full aspect-[3/4] object-cover mb-2" src="${img.src}" />
+                        <img alt="${img.alt}" class="rounded-lg w-full aspect-[3/4] object-cover mb-2" src="${img.src}" ${b(`hero.showcaseImages.${i}.src`)} />
                     </div>
                 `).join('') : ''}
             </div>
             <div id="value-props-title"
-                class="inline-block bg-brand text-white py-2 px-8 rounded-lg mb-8 font-bold text-lg">
+                class="inline-block bg-brand text-white py-2 px-8 rounded-lg mb-8 font-bold text-lg" ${b('hero.valueProps.title')}>
                 ${data.hero.valueProps.title}
             </div>
             <div id="value-props-list" class="grid md:grid-cols-2 gap-6 text-left max-w-3xl mx-auto mb-10">
-                ${data.hero.valueProps.items ? data.hero.valueProps.items.map((item: string) => `
+                ${data.hero.valueProps.items ? data.hero.valueProps.items.map((item: string, i: number) => `
                     <div class="flex items-start gap-3">
                         <span class="material-icons text-orange-500 mt-1">check_box</span>
-                        <p class="font-medium">${item}</p>
+                        <p class="font-medium" ${b(`hero.valueProps.items.${i}`)}>${item}</p>
                     </div>
                 `).join('') : ''}
             </div>
@@ -126,7 +129,7 @@ export function render(data: any): string {
                 <a id="hero-main-cta"
                     class="bg-primary hover:bg-red-700 text-white px-10 py-4 rounded-lg font-bold text-xl shadow-xl flex items-center gap-2"
                     href="#order-form">
-                    ${data.hero.mainCta} <span class="material-icons">shopping_cart</span>
+                    <span ${b('hero.mainCta')}>${data.hero.mainCta}</span> <span class="material-icons">shopping_cart</span>
                 </a>
             </div>
         </section>
@@ -134,51 +137,51 @@ export function render(data: any): string {
             <div class="grid md:grid-cols-2 gap-10 items-center">
                 <div class="relative">
                     <img id="combo-image" alt="Combo Offer" class="rounded-2xl shadow-2xl border-4 border-brand"
-                        src="${data.comboOffer.image}" />
+                        src="${data.comboOffer.image}" ${b('comboOffer.image')} />
                     <div
                         class="absolute -bottom-4 -right-4 bg-brand text-white p-4 rounded-xl font-bold shadow-lg transform rotate-3">
-                        <div id="combo-badge-line1" class="text-xl">${data.comboOffer.badge.line1}</div>
-                        <div id="combo-badge-line2" class="text-3xl">${data.comboOffer.badge.line2}</div>
+                        <div id="combo-badge-line1" class="text-xl" ${b('comboOffer.badge.line1')}>${data.comboOffer.badge.line1}</div>
+                        <div id="combo-badge-line2" class="text-3xl" ${b('comboOffer.badge.line2')}>${data.comboOffer.badge.line2}</div>
                     </div>
                 </div>
                 <div>
-                    <h3 id="combo-details-title" class="text-2xl font-bold mb-4 text-brand">
+                    <h3 id="combo-details-title" class="text-2xl font-bold mb-4 text-brand" ${b('comboOffer.details.title')}>
                         ${data.comboOffer.details.title}
                     </h3>
-                    <p id="combo-details-desc" class="mb-6 opacity-80 leading-relaxed">
+                    <p id="combo-details-desc" class="mb-6 opacity-80 leading-relaxed" ${b('comboOffer.details.description')}>
                         ${data.comboOffer.details.description}
                     </p>
                     <ul id="combo-features-list" class="space-y-3 mb-8">
-                        ${data.comboOffer.details.features ? data.comboOffer.details.features.map((feat: string) => `
+                        ${data.comboOffer.details.features ? data.comboOffer.details.features.map((feat: string, i: number) => `
                             <li class="flex items-center gap-2">
-                                <span class="text-green-500 material-icons text-sm">fiber_manual_record</span> ${feat}
+                                <span class="text-green-500 material-icons text-sm">fiber_manual_record</span> <span ${b(`comboOffer.details.features.${i}`)}>${feat}</span>
                             </li>
                         `).join('') : ''}
                     </ul>
                     <a id="combo-cta"
                         class="bg-primary text-white py-3 px-8 rounded-lg font-bold flex items-center justify-center gap-2 w-full md:w-auto"
                         href="#order-form">
-                        ${data.comboOffer.details.cta} <span class="material-icons">shopping_cart</span>
+                        <span ${b('comboOffer.details.cta')}>${data.comboOffer.details.cta}</span> <span class="material-icons">shopping_cart</span>
                     </a>
                 </div>
             </div>
         </section>
         <div id="pricing-container" class="grid md:grid-cols-2 gap-4 mb-16">
-            ${data.pricing ? data.pricing.map((item: any) => `
+            ${data.pricing ? data.pricing.map((item: any, i: number) => `
                 <div class="border-2 border-brand/20 bg-white p-4 rounded-xl text-center">
-                    <span class="text-lg font-bold">${item.text} <span class="text-green-600 border-2 border-green-600 rounded-full px-2 py-0.5">${item.price}</span> ${item.unit}</span>
+                    <span class="text-lg font-bold"><span ${b(`pricing.${i}.text`)}>${item.text}</span> <span class="text-green-600 border-2 border-green-600 rounded-full px-2 py-0.5" ${b(`pricing.${i}.price`)}>${item.price}</span> <span ${b(`pricing.${i}.unit`)}>${item.unit}</span></span>
                 </div>
             `).join('') : ''}
         </div>
-        <p id="trust-badge-text" class="text-center text-lg font-semibold max-w-3xl mx-auto mb-16 px-4">
+        <p id="trust-badge-text" class="text-center text-lg font-semibold max-w-3xl mx-auto mb-16 px-4" ${b('trustBadge.text')}>
             ${data.trustBadge.text}
         </p>
         <section class="bg-[#10B981] text-white rounded-3xl p-6 md:p-12 mb-20 text-center shadow-2xl">
             <div class="mb-8 flex flex-col items-center">
                 <div class="text-4xl font-black mb-2 flex items-center gap-2">
-                    <span class="material-icons text-4xl">inventory_2</span> <span id="size-chart-logo-text">${data.header.logoText}</span>
+                    <span class="material-icons text-4xl">inventory_2</span> <span id="size-chart-logo-text" ${b('header.logoText')}>${data.header.logoText}</span>
                 </div>
-                <p id="size-chart-title" class="text-lg opacity-90">${data.sizeChart.title}</p>
+                <p id="size-chart-title" class="text-lg opacity-90" ${b('sizeChart.title')}>${data.sizeChart.title}</p>
             </div>
             <div class="overflow-x-auto">
                 <table class="w-full text-center border-collapse text-xl">
@@ -301,7 +304,7 @@ export function render(data: any): string {
                     <h3 class="text-xl font-bold mb-6 flex items-center gap-2">
                         <span
                             class="bg-brand text-white w-8 h-8 rounded-full flex items-center justify-center text-sm">1</span>
-                        <span id="order-step1-title">${data.orderForm.step1Title}</span>
+                        <span id="order-step1-title" ${b('orderForm.step1Title')}>${data.orderForm.step1Title}</span>
                     </h3>
                     <div id="product-list-container" class="space-y-4">
                         <!-- Dynamic Products Injected via JS -->
@@ -311,31 +314,31 @@ export function render(data: any): string {
                     <h3 class="text-xl font-bold flex items-center gap-2">
                         <span
                             class="bg-brand text-white w-8 h-8 rounded-full flex items-center justify-center text-sm">2</span>
-                        <span id="order-step2-title">${data.orderForm.step2Title}</span>
+                        <span id="order-step2-title" ${b('orderForm.step2Title')}>${data.orderForm.step2Title}</span>
                     </h3>
                     <div class="grid gap-4">
                         <div>
-                            <label id="label-name" class="block text-sm font-semibold mb-2">${data.orderForm.labels.name}</label>
+                            <label id="label-name" class="block text-sm font-semibold mb-2" ${b('orderForm.labels.name')}>${data.orderForm.labels.name}</label>
                             <input id="customer_name"
                                 class="w-full rounded-lg border-slate-300 focus:border-brand focus:ring-brand"
-                                type="text" placeholder="${data.orderForm.labels.namePlaceholder}" />
+                                type="text" placeholder="${data.orderForm.labels.namePlaceholder}" ${b('orderForm.labels.namePlaceholder')} />
                         </div>
                         <div>
-                            <label id="label-address" class="block text-sm font-semibold mb-2">${data.orderForm.labels.address}</label>
+                            <label id="label-address" class="block text-sm font-semibold mb-2" ${b('orderForm.labels.address')}>${data.orderForm.labels.address}</label>
                             <textarea id="customer_address"
                                 class="w-full rounded-lg border-slate-300 focus:border-brand focus:ring-brand"
-                                rows="3" placeholder="${data.orderForm.labels.addressPlaceholder}"></textarea>
+                                rows="3" placeholder="${data.orderForm.labels.addressPlaceholder}" ${b('orderForm.labels.addressPlaceholder')}></textarea>
                         </div>
                         <div>
-                            <label id="label-phone" class="block text-sm font-semibold mb-2">${data.orderForm.labels.phone}</label>
+                            <label id="label-phone" class="block text-sm font-semibold mb-2" ${b('orderForm.labels.phone')}>${data.orderForm.labels.phone}</label>
                             <input id="customer_phone"
                                 class="w-full rounded-lg border-slate-300 focus:border-brand focus:ring-brand"
-                                type="tel" placeholder="${data.orderForm.labels.phonePlaceholder}" />
+                                type="tel" placeholder="${data.orderForm.labels.phonePlaceholder}" ${b('orderForm.labels.phonePlaceholder')} />
                         </div>
                     </div>
                     <div class="grid grid-cols-2 gap-8">
                         <div>
-                            <label id="label-size" class="block text-sm font-semibold mb-3">${data.orderForm.labels.size}</label>
+                            <label id="label-size" class="block text-sm font-semibold mb-3" ${b('orderForm.labels.size')}>${data.orderForm.labels.size}</label>
                             <div class="space-y-2">
                                 <label class="flex items-center gap-2 cursor-pointer"><input
                                         class="text-brand focus:ring-brand" name="size" type="radio" /> M *</label>
@@ -348,7 +351,7 @@ export function render(data: any): string {
                             </div>
                         </div>
                         <div>
-                            <label id="label-color" class="block text-sm font-semibold mb-3">${data.orderForm.labels.color}</label>
+                            <label id="label-color" class="block text-sm font-semibold mb-3" ${b('orderForm.labels.color')}>${data.orderForm.labels.color}</label>
                             <div class="space-y-2">
                                 <label class="flex items-center gap-2 cursor-pointer"><input
                                         class="text-brand rounded focus:ring-brand" name="color" value="Black"
@@ -363,7 +366,7 @@ export function render(data: any): string {
                         </div>
                     </div>
                     <div>
-                        <h3 id="label-shipping" class="text-lg font-bold mb-4">${data.orderForm.labels.shippingTitle}</h3>
+                        <h3 id="label-shipping" class="text-lg font-bold mb-4" ${b('orderForm.labels.shippingTitle')}>${data.orderForm.labels.shippingTitle}</h3>
                         <div id="shipping-options-container"
                             class="space-y-3 bg-white p-4 rounded-xl border border-slate-200">
                             <!-- Dynamic Shipping Injected via JS -->
@@ -373,12 +376,12 @@ export function render(data: any): string {
             </div>
             <div class="lg:col-span-2 space-y-6">
                 <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-200 sticky top-8">
-                    <h3 id="summary-title" class="text-xl font-bold mb-6">${data.orderForm.summary.title}</h3>
+                    <h3 id="summary-title" class="text-xl font-bold mb-6" ${b('orderForm.summary.title')}>${data.orderForm.summary.title}</h3>
                     <div class="space-y-4 mb-6">
                         <div class="flex items-start gap-4 pb-4 border-b border-slate-100">
-                            <img alt="${data.orderForm.products[0].name}" class="w-12 h-12 rounded object-cover" src="${data.orderForm.products[0].image}" />
+                            <img alt="${data.orderForm.products[0].name}" class="w-12 h-12 rounded object-cover" src="${data.orderForm.products[0].image}" ${b('orderForm.products.0.image')} />
                             <div class="flex-1">
-                                <p class="text-sm font-medium">${data.orderForm.products[0].name}</p>
+                                <p class="text-sm font-medium" ${b('orderForm.products.0.name')}>${data.orderForm.products[0].name}</p>
                             </div>
                             <span class="font-bold">× ১ ${data.orderForm.products[0].price}৳</span>
                         </div>
@@ -396,19 +399,19 @@ export function render(data: any): string {
                         </div>
                     </div>
                     <div class="bg-green-50 p-4 rounded-xl mb-6">
-                        <p id="summary-cod-text" class="text-sm font-semibold mb-2">${data.orderForm.summary.codText}</p>
+                        <p id="summary-cod-text" class="text-sm font-semibold mb-2" ${b('orderForm.summary.codText')}>${data.orderForm.summary.codText}</p>
                         <label
                             class="flex items-center gap-2 text-sm bg-green-400 p-2 rounded text-white cursor-pointer">
                             <input checked="" class="rounded border-none focus:ring-0" type="checkbox" />
-                            <span id="summary-cod-label">${data.orderForm.summary.codLabel}</span>
+                            <span id="summary-cod-label" ${b('orderForm.summary.codLabel')}>${data.orderForm.summary.codLabel}</span>
                         </label>
                     </div>
-                    <p id="summary-disclaimer" class="text-[10px] text-slate-400 mb-6 leading-relaxed">
+                    <p id="summary-disclaimer" class="text-[10px] text-slate-400 mb-6 leading-relaxed" ${b('orderForm.summary.disclaimer')}>
                         ${data.orderForm.summary.disclaimer}
                     </p>
                     <button id="order-btn"
                         class="w-full bg-primary hover:bg-red-700 text-white py-4 rounded-xl font-bold text-lg flex items-center justify-center gap-2 shadow-lg shadow-primary/30 transition-all active:scale-95">
-                        <span class="material-icons">lock</span> <span id="order-btn-text">${data.orderForm.summary.buttonText}</span>
+                        <span class="material-icons">lock</span> <span id="order-btn-text" ${b('orderForm.summary.buttonText')}>${data.orderForm.summary.buttonText}</span>
                     </button>
                 </div>
             </div>
@@ -416,11 +419,11 @@ export function render(data: any): string {
     </main>
     <footer class="bg-slate-100 py-12 border-t border-slate-200">
         <div class="max-w-4xl mx-auto px-4 text-center">
-            <p id="footer-contact-title" class="text-brand font-bold mb-4">${data.footer.contactTitle}</p>
+            <p id="footer-contact-title" class="text-brand font-bold mb-4" ${b('footer.contactTitle')}>${data.footer.contactTitle}</p>
             <div id="footer-numbers" class="text-lg font-bold flex flex-col gap-1">
-                ${data.footer.phoneNumbers ? data.footer.phoneNumbers.map((num: string) => `<p>${num}</p>`).join('') : ''}
+                ${data.footer.phoneNumbers ? data.footer.phoneNumbers.map((num: string, i: number) => `<p ${b(`footer.phoneNumbers.${i}`)}>${num}</p>`).join('') : ''}
             </div>
-            <div id="footer-copyright" class="mt-8 text-sm opacity-50">
+            <div id="footer-copyright" class="mt-8 text-sm opacity-50" ${b('footer.copyright')}>
                 ${data.footer.copyright}
             </div>
         </div>
