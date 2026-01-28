@@ -1,6 +1,6 @@
 import { Hono } from 'hono'
 import { cors } from 'hono/cors'
-import content from '../content.json'
+import { ContentService, PageConfig } from './contentService'
 import { render } from './renderer'
 import { auth } from './auth'
 import { Layout, DashboardView, InventoryView, OrdersView, ProfileView, EditFunnelView, LoginView } from './dashboard'
@@ -9,6 +9,7 @@ import clientJs from './client.js'
 
 type Bindings = {
     DB: D1Database
+    LANDING_PAGE_CONTENT: KVNamespace
 }
 
 type Variables = {
@@ -24,8 +25,31 @@ app.use('*', cors({
 }))
 
 // Serve the Landing Page (SSR)
-app.get('/', (c) => {
-    const html = render(content);
+app.get('/', async (c) => {
+    // Default to 'default' slug for the root path
+    const contentService = new ContentService(c.env.LANDING_PAGE_CONTENT);
+    const pageConfig = await contentService.getPage('default');
+
+    if (!pageConfig) {
+        return c.text('Landing page not found', 404);
+    }
+
+    // Pass the 'data' portion to the renderer
+    const html = render(pageConfig.data);
+    return c.html(html);
+})
+
+// Optional: Serve specific landing pages by slug
+app.get('/p/:slug', async (c) => {
+    const slug = c.req.param('slug');
+    const contentService = new ContentService(c.env.LANDING_PAGE_CONTENT);
+    const pageConfig = await contentService.getPage(slug);
+
+    if (!pageConfig) {
+        return c.text('Page not found', 404);
+    }
+
+    const html = render(pageConfig.data);
     return c.html(html);
 })
 
@@ -35,9 +59,45 @@ app.get('/client.js', (c) => {
     })
 })
 
-// Serve dynamic content for editing (if needed in future)
-app.get('/api/content', (c) => {
-    return c.json(content)
+// Serve dynamic content for editing
+app.get('/api/content', async (c) => {
+    // Default to 'default' slug for now, or allow query param?
+    const slug = c.req.query('slug') || 'default';
+    const contentService = new ContentService(c.env.LANDING_PAGE_CONTENT);
+    const pageConfig = await contentService.getPage(slug);
+
+    return c.json(pageConfig ? pageConfig.data : {});
+})
+
+// Admin: Save content
+app.post('/admin/api/content', auth.middleware, async (c) => {
+    const body = await c.req.json();
+    const slug = body.slug || 'default';
+    const template = body.template || 'commerce-v1';
+
+    const contentService = new ContentService(c.env.LANDING_PAGE_CONTENT);
+
+    // We expect the body to contain the new data in 'data' field, or maybe the body IS the data?
+    // Let's assume the editor sends the 'data' object.
+    // If the body has { slug, template, data }, use that. Otherwise wrap it.
+
+    let newConfig: PageConfig;
+
+    if (body.data && body.slug) {
+        // Full config sent
+        newConfig = body as PageConfig;
+    } else {
+        // Just data sent, wrap it for 'default'
+        newConfig = {
+            slug: slug,
+            template: template,
+            version: Date.now(), // Simple versioning
+            data: body
+        };
+    }
+
+    await contentService.savePage(newConfig);
+    return c.json({ success: true, slug });
 })
 
 import { analyticsRouter } from './analytics'
@@ -114,8 +174,10 @@ app.post('/admin/profile', async (c) => {
     }
 });
 
-app.get('/admin/editor', (c) => {
-    const html = render(content);
+app.get('/admin/editor', async (c) => {
+    const contentService = new ContentService(c.env.LANDING_PAGE_CONTENT);
+    const pageConfig = await contentService.getPage('default');
+    const html = render(pageConfig ? pageConfig.data : {});
     return c.html(Layout(EditFunnelView(html), 'editor'));
 });
 

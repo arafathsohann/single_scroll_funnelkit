@@ -14,3 +14,8 @@ database_id = "to-be-replaced-after-creation"
 type = "Text"
 globs = ["**/client.js"]
 fallthrough = false
+
+[[kv_namespaces]]
+binding = "LANDING_PAGE_CONTENT"
+id = "preview" # User must replace this with real ID for production
+preview_id = "preview"
