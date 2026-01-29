@@ -4,7 +4,7 @@ import { ContentService, PageConfig } from './contentService'
 import { render } from './renderer'
 import { auth } from './auth'
 import initialContent from '../content.json'
-import { Layout, DashboardView, InventoryView, OrdersView, ProfileView, EditFunnelView, LoginView } from './dashboard'
+import { Layout, DashboardView, InventoryView, OrdersView, ProfileView, EditFunnelView, LoginView, EditorFrameView, PagesView } from './dashboard'
 // @ts-ignore
 import clientJs from './client.js'
 
@@ -131,6 +131,39 @@ app.get('/admin/inventory', (c) => {
     return c.html(Layout(InventoryView(), 'inventory'));
 })
 
+app.get('/admin/pages', async (c) => {
+    const contentService = new ContentService(c.env.LANDING_PAGE_CONTENT);
+    const pages = await contentService.listPages();
+    return c.html(Layout(PagesView(pages), 'pages'));
+})
+
+app.post('/admin/api/pages', async (c) => {
+    const body = await c.req.parseBody();
+    const slug = body.slug as string;
+    const template = body.template as string || 'commerce-v1';
+
+    if (!slug) return c.text('Slug required', 400);
+
+    const contentService = new ContentService(c.env.LANDING_PAGE_CONTENT);
+    // Use initialContent as seed
+    await contentService.createPage(slug, initialContent, template);
+
+    return c.redirect('/admin/pages');
+})
+
+app.post('/admin/api/pages/reset', async (c) => {
+    const body = await c.req.parseBody();
+    const slug = body.slug as string;
+
+    if (!slug) return c.text('Slug required', 400);
+
+    const contentService = new ContentService(c.env.LANDING_PAGE_CONTENT);
+    // Reset to initialContent
+    await contentService.createPage(slug, initialContent, 'commerce-v1');
+
+    return c.redirect('/admin/pages');
+})
+
 app.get('/admin/orders', async (c) => {
     try {
         const { results } = await c.env.DB.prepare('SELECT * FROM orders ORDER BY created_at DESC').all();
@@ -184,9 +217,16 @@ import editorCss from './editor.css'
 app.get('/editor.js', (c) => c.body(editorJs, 200, { 'Content-Type': 'text/javascript' }))
 app.get('/editor.css', (c) => c.body(editorCss, 200, { 'Content-Type': 'text/css' }))
 
-// --- Editor Page ---
+// --- Editor Page (Frame with Sidebar) ---
 app.get('/admin/editor/:slug?', async (c) => {
-    const slug = c.req.query('slug') || 't1';
+    const slug = c.req.param('slug') || c.req.query('slug') || 't1';
+    // This view just renders the Sidebar Layout + the Iframe pointing to the canvas
+    return c.html(Layout(EditorFrameView(slug), 'editor')); // 'editor' active tab
+});
+
+// --- Editor Canvas (The Actual Editable Page inside Iframe) ---
+app.get('/admin/editor-canvas/:slug?', async (c) => {
+    const slug = c.req.param('slug') || 't1';
     const contentService = new ContentService(c.env.LANDING_PAGE_CONTENT);
 
     // Load DRAFT content to render
@@ -263,6 +303,13 @@ app.post('/admin/api/publish', auth.middleware, async (c) => {
     } catch (e: any) {
         return c.json({ error: e.message }, 500);
     }
+});
+
+// TEMPORARY: Reset t1 to content.json
+app.get('/admin/api/reset-t1', auth.middleware, async (c) => {
+    const contentService = new ContentService(c.env.LANDING_PAGE_CONTENT);
+    await contentService.createPage('t1', initialContent, 'commerce-v1');
+    return c.text('Reset t1 to initial content');
 });
 
 

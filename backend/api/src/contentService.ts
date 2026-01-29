@@ -93,8 +93,26 @@ export class ContentService {
     /**
      * Helper to list all pages (optional, for admin dashboard)
      */
-    async listPages(): Promise<{ name: string; metadata?: any }[]> {
+    async listPages(): Promise<{ slug: string; metadata?: any }[]> {
         const list = await this.kv.list({ prefix: 'page:' });
-        return list.keys;
+        return list.keys.map(k => ({
+            slug: k.name.replace('page:', ''),
+            metadata: k.metadata
+        }));
+    }
+
+    /**
+     * Create a new page with initial content.
+     */
+    async createPage(slug: string, initialData: any, template: string = 'commerce-v1'): Promise<void> {
+        // Check if exists?
+        // For now, overwrite or simple create
+        const config: PageConfig = {
+            slug,
+            template,
+            version: 1,
+            data: initialData
+        }
+        await this.savePage(config);
     }
 }

@@ -306,8 +306,23 @@ export function render(data: any): string {
                             class="bg-brand text-white w-8 h-8 rounded-full flex items-center justify-center text-sm">1</span>
                         <span id="order-step1-title" ${b('orderForm.step1Title')}>${data.orderForm.step1Title}</span>
                     </h3>
-                    <div id="product-list-container" class="space-y-4">
+                    <div id="product-list-container" class="space-y-4" ${b('orderForm.products')}>
                         <!-- Dynamic Products Injected via JS -->
+                        ${data.orderForm.products.map((prod: any, i: number) => `
+                             <label class="block cursor-pointer group">
+                                <input class="hidden peer" name="product" type="radio" value="${prod.id}" data-price="${prod.price}" ${i === 0 ? 'checked' : ''} />
+                                <div class="flex items-center gap-4 p-4 rounded-xl border-2 border-slate-200 peer-checked:border-brand peer-checked:bg-blue-50 transition-all">
+                                    <img alt="${prod.name}" class="w-16 h-16 rounded-lg object-cover" src="${prod.image}" />
+                                    <div class="flex-1">
+                                        <h4 class="font-bold">${prod.name}</h4>
+                                        <p class="text-sm text-slate-500">${prod.price}৳</p>
+                                    </div>
+                                    <div class="flex items-center gap-2">
+                                        <span class="font-bold px-2 quantity-value">1</span>
+                                    </div>
+                                </div>
+                            </label>
+                        `).join('')} 
                     </div>
                 </div>
                 <div class="space-y-6">
@@ -339,37 +354,38 @@ export function render(data: any): string {
                     <div class="grid grid-cols-2 gap-8">
                         <div>
                             <label id="label-size" class="block text-sm font-semibold mb-3" ${b('orderForm.labels.size')}>${data.orderForm.labels.size}</label>
-                            <div class="space-y-2">
-                                <label class="flex items-center gap-2 cursor-pointer"><input
-                                        class="text-brand focus:ring-brand" name="size" type="radio" /> M *</label>
-                                <label class="flex items-center gap-2 cursor-pointer"><input
-                                        class="text-brand focus:ring-brand" name="size" type="radio" /> L *</label>
-                                <label class="flex items-center gap-2 cursor-pointer"><input
-                                        class="text-brand focus:ring-brand" name="size" type="radio" /> XL *</label>
-                                <label class="flex items-center gap-2 cursor-pointer"><input
-                                        class="text-brand focus:ring-brand" name="size" type="radio" /> XXL *</label>
+                            <div class="space-y-2" ${b('orderForm.options.sizes')}>
+                                ${data.orderForm.options && data.orderForm.options.sizes ? data.orderForm.options.sizes.map((size: string) => `
+                                    <label class="flex items-center gap-2 cursor-pointer">
+                                        <input class="text-brand focus:ring-brand" name="size" type="radio" value="${size}" /> ${size}
+                                    </label>
+                                `).join('') : 'No sizes defined'}
                             </div>
                         </div>
                         <div>
                             <label id="label-color" class="block text-sm font-semibold mb-3" ${b('orderForm.labels.color')}>${data.orderForm.labels.color}</label>
-                            <div class="space-y-2">
-                                <label class="flex items-center gap-2 cursor-pointer"><input
-                                        class="text-brand rounded focus:ring-brand" name="color" value="Black"
-                                        type="checkbox" /> Black</label>
-                                <label class="flex items-center gap-2 cursor-pointer"><input
-                                        class="text-brand rounded focus:ring-brand" name="color" value="Grey"
-                                        type="checkbox" /> Grey</label>
-                                <label class="flex items-center gap-2 cursor-pointer"><input
-                                        class="text-brand rounded focus:ring-brand" name="color" value="Olive"
-                                        type="checkbox" /> Olive</label>
+                            <div class="space-y-2" ${b('orderForm.options.colors')}>
+                                 ${data.orderForm.options && data.orderForm.options.colors ? data.orderForm.options.colors.map((color: string) => `
+                                    <label class="flex items-center gap-2 cursor-pointer">
+                                        <input class="text-brand rounded focus:ring-brand" name="color" value="${color}" type="checkbox" /> ${color}
+                                    </label>
+                                `).join('') : 'No colors defined'}
                             </div>
                         </div>
                     </div>
                     <div>
                         <h3 id="label-shipping" class="text-lg font-bold mb-4" ${b('orderForm.labels.shippingTitle')}>${data.orderForm.labels.shippingTitle}</h3>
-                        <div id="shipping-options-container"
-                            class="space-y-3 bg-white p-4 rounded-xl border border-slate-200">
+                        <div id="shipping-options-container" class="space-y-3 bg-white p-4 rounded-xl border border-slate-200" ${b('orderForm.shippingOptions')}>
                             <!-- Dynamic Shipping Injected via JS -->
+                             ${data.orderForm.shippingOptions.map((opt: any, i: number) => `
+                                <label class="flex items-center justify-between cursor-pointer ${i > 0 ? 'border-t border-slate-100 pt-3' : ''}">
+                                    <div class="flex items-center gap-2">
+                                        <input class="text-brand focus:ring-brand" name="shipping" type="radio" value="${opt.price}" ${i === 0 ? 'checked' : ''} />
+                                        <span>${opt.label}</span>
+                                    </div>
+                                    <span class="font-bold">${opt.price}৳</span>
+                                </label>
+                            `).join('')}
                         </div>
                     </div>
                 </div>

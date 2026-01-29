@@ -57,6 +57,10 @@ export const Layout = (content: string, activeTab: string) => `<!DOCTYPE html>
                     <span class="material-symbols-outlined icon ${activeTab === 'dashboard' ? 'text-white/70' : 'text-slate-400'} group-hover:text-white transition-colors">dashboard</span>
                     <span class="text-sm font-medium">Overview</span>
                 </a>
+                <a class="sidebar-link ${activeTab === 'pages' ? 'active' : 'text-slate-300'} flex items-center gap-3 px-4 py-3 rounded-xl transition-colors group" href="/admin/pages">
+                    <span class="material-symbols-outlined icon ${activeTab === 'pages' ? 'text-white/70' : 'text-slate-400'} group-hover:text-white transition-colors">web</span>
+                    <span class="text-sm font-medium">Pages</span>
+                </a>
                 <a class="sidebar-link ${activeTab === 'orders' ? 'active' : 'text-slate-300'} flex items-center gap-3 px-4 py-3 rounded-xl transition-colors group" href="/admin/orders">
                     <span class="material-symbols-outlined icon ${activeTab === 'orders' ? 'text-white/70' : 'text-slate-400'} group-hover:text-white transition-colors">shopping_cart</span>
                     <span class="text-sm font-medium">Orders</span>
