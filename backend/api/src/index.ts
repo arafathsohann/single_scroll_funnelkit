@@ -4,7 +4,7 @@ import { ContentService, PageConfig } from './contentService'
 import { render } from './renderer'
 import { auth } from './auth'
 import initialContent from '../content.json'
-import { Layout, DashboardView, InventoryView, OrdersView, ProfileView, EditFunnelView, LoginView, EditorFrameView, PagesView } from './dashboard'
+import { Layout, DashboardView, InventoryView, OrdersView, ProfileView, EditFunnelView, LoginView, EditorFrameView, PagesView, KVListView } from './dashboard'
 // @ts-ignore
 import clientJs from './client.js'
 
@@ -162,6 +162,79 @@ app.post('/admin/api/pages/reset', async (c) => {
     await contentService.createPage(slug, initialContent, 'commerce-v1');
 
     return c.redirect('/admin/pages');
+})
+
+
+app.post('/admin/api/pages/delete', async (c) => {
+    const body = await c.req.parseBody();
+    const slug = body.slug as string;
+
+    if (!slug) return c.text('Slug required', 400);
+
+    // Delete both page and draft
+    await c.env.LANDING_PAGE_CONTENT.delete(`page:${slug}`);
+    await c.env.LANDING_PAGE_CONTENT.delete(`draft:${slug}`);
+
+    return c.redirect('/admin/pages');
+})
+
+// --- KV Diagnostics Routes ---
+
+app.get('/admin/kv', async (c) => {
+    const list = await c.env.LANDING_PAGE_CONTENT.list();
+    const keys = [];
+
+    for (const key of list.keys) {
+        let value = null;
+        try {
+            value = await c.env.LANDING_PAGE_CONTENT.get(key.name, 'json');
+        } catch (e) {
+            value = await c.env.LANDING_PAGE_CONTENT.get(key.name, 'text');
+        }
+        keys.push({ key: key.name, value });
+    }
+
+    return c.html(Layout(KVListView(keys), 'kv'));
+})
+
+app.get('/admin/kv/view/:key', async (c) => {
+    const key = c.req.param('key');
+    const value = await c.env.LANDING_PAGE_CONTENT.get(key, 'text');
+
+    try {
+        const json = JSON.parse(value || '{}');
+        return c.json(json);
+    } catch {
+        return c.text(value || '');
+    }
+})
+
+// --- Sync Routes ---
+
+app.post('/admin/api/sync-t1', async (c) => {
+    const contentService = new ContentService(c.env.LANDING_PAGE_CONTENT);
+
+    // 1. Get default page data (from implicit 'default' page or just creating one if missing logic?)
+    // User expects /p/default to have data. That means 'page:default' likely exists.
+    const sourceConfig = await contentService.getPage('default');
+
+    if (!sourceConfig) {
+        return c.text('Source page "default" not found in KV.', 404);
+    }
+
+    // 2. Overwrite 't1' with this data
+    const targetSlug = 't1';
+    const newConfig: PageConfig = {
+        slug: targetSlug,
+        template: sourceConfig.template || 'commerce-v1',
+        version: Date.now(),
+        data: sourceConfig.data
+    };
+
+    await contentService.savePage(newConfig);
+    await contentService.saveDraft(newConfig);
+
+    return c.redirect('/admin/kv');
 })
 
 app.get('/admin/orders', async (c) => {

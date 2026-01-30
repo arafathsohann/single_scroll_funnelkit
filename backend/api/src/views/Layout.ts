@@ -77,6 +77,10 @@ export const Layout = (content: string, activeTab: string) => `<!DOCTYPE html>
                     <span class="material-symbols-outlined icon ${activeTab === 'editor' ? 'text-white/70' : 'text-slate-400'} group-hover:text-white transition-colors">edit_note</span>
                     <span class="text-sm font-medium">Editor</span>
                 </a>
+            <a class="sidebar-link ${activeTab === 'kv' ? 'active' : 'text-slate-300'} flex items-center gap-3 px-4 py-3 rounded-xl transition-colors group" href="/admin/kv">
+                    <span class="material-symbols-outlined icon ${activeTab === 'kv' ? 'text-white/70' : 'text-slate-400'} group-hover:text-white transition-colors">database</span>
+                    <span class="text-sm font-medium">KV Data</span>
+                </a>
             </nav>
             <div class="p-4 border-t border-white/10">
                 <a href="/admin/logout" class="flex items-center gap-3 px-4 py-3 w-full rounded-xl text-slate-300 hover:text-white hover:bg-white/10 transition-colors">

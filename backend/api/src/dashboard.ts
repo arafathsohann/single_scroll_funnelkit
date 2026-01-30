@@ -8,5 +8,6 @@ export { EditFunnelView } from './views/EditFunnel';
 export { LoginView } from './views/Login';
 export { EditorFrameView } from './views/EditorFrame';
 export { PagesView } from './views/Pages';
+export { KVListView } from './views/KVList';
 
 

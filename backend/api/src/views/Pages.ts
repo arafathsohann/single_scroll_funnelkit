@@ -32,7 +32,14 @@ export const PagesView = (pages: { slug: string; metadata?: any }[]) => `
                             <span class="material-symbols-outlined text-lg">open_in_new</span>
                         </a>
                     </div>
-                    <div class="mt-3 pt-3 border-t border-slate-100 flex justify-end">
+                    <div class="mt-3 pt-3 border-t border-slate-100 flex justify-between items-center">
+                        <form method="POST" action="/admin/api/pages/delete" onsubmit="return confirm('Are you sure you want to DELETE this page? This action cannot be undone.');">
+                            <input type="hidden" name="slug" value="${page.slug}">
+                            <button type="submit" class="text-xs text-slate-400 hover:text-red-600 font-bold flex items-center gap-1 transition-colors" title="Delete Page">
+                                <span class="material-symbols-outlined text-sm">delete</span>
+                            </button>
+                        </form>
+
                         <form method="POST" action="/admin/api/pages/reset" onsubmit="return confirm('WARNING: This will completely wipe all changes on this page and restore the default template. This cannot be undone. Are you sure?');">
                             <input type="hidden" name="slug" value="${page.slug}">
                             <button type="submit" class="text-xs text-red-500 hover:text-red-700 font-bold flex items-center gap-1 opacity-60 hover:opacity-100 transition-opacity">
