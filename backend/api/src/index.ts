@@ -7,6 +7,20 @@ import initialContent from '../content.json'
 import { Layout, DashboardView, InventoryView, OrdersView, ProfileView, EditFunnelView, LoginView, EditorFrameView, PagesView, KVListView } from './dashboard'
 // @ts-ignore
 import clientJs from './client.js'
+import * as t1 from './templates/landing-page-template-1'
+import * as t2 from './templates/landing-page-template-2'
+import * as t3 from './templates/landing-page-template-3'
+import * as t4 from './templates/landing-page-template-4'
+import * as t5 from './templates/landing-page-template-5'
+
+const templates: Record<string, any> = {
+    'landing-page-template-1': t1,
+    'landing-page-template-2': t2,
+    'landing-page-template-3': t3,
+    'landing-page-template-4': t4,
+    'landing-page-template-5': t5,
+    'commerce-v1': t1, // Legacy/Default fallback
+};
 
 type Bindings = {
     DB: D1Database
@@ -36,7 +50,9 @@ app.get('/', async (c) => {
     }
 
     // Pass the 'data' portion to the renderer
-    const html = render(pageConfig.data);
+    const templateName = pageConfig.template || 'landing-page-template-1';
+    const templateModule = templates[templateName] || t1;
+    const html = templateModule.render(pageConfig.data);
     return c.html(html);
 })
 
@@ -50,7 +66,9 @@ app.get('/p/:slug', async (c) => {
         return c.text('Page not found', 404);
     }
 
-    const html = render(pageConfig.data);
+    const templateName = pageConfig.template || 'landing-page-template-1';
+    const templateModule = templates[templateName] || t1;
+    const html = templateModule.render(pageConfig.data);
     return c.html(html);
 })
 
@@ -145,8 +163,12 @@ app.post('/admin/api/pages', async (c) => {
     if (!slug) return c.text('Slug required', 400);
 
     const contentService = new ContentService(c.env.LANDING_PAGE_CONTENT);
-    // Use initialContent as seed
-    await contentService.createPage(slug, initialContent, template);
+
+    // Get default data from the selected template
+    const templateModule = templates[template] || t1;
+    const seedData = templateModule.defaultData || initialContent;
+
+    await contentService.createPage(slug, seedData, template);
 
     return c.redirect('/admin/pages');
 })
@@ -158,8 +180,17 @@ app.post('/admin/api/pages/reset', async (c) => {
     if (!slug) return c.text('Slug required', 400);
 
     const contentService = new ContentService(c.env.LANDING_PAGE_CONTENT);
-    // Reset to initialContent
-    await contentService.createPage(slug, initialContent, 'commerce-v1');
+
+    // Get existing page to determine template
+    const existingPage = await contentService.getPage(slug);
+    const templateName = existingPage?.template || 'landing-page-template-1';
+
+    // Get default data for that template
+    const templateModule = templates[templateName] || t1;
+    const seedData = templateModule.defaultData || initialContent;
+
+    // Reset to seed data, keeping the same template
+    await contentService.createPage(slug, seedData, templateName);
 
     return c.redirect('/admin/pages');
 })
@@ -308,7 +339,13 @@ app.get('/admin/editor-canvas/:slug?', async (c) => {
     // Fallback if no draft/page exists: Use initialContent from file to SEED the editor
     const data = draftConfig ? draftConfig.data : initialContent;
 
-    const pageHtml = render(data);
+    // Determine template to render in editor
+    // If draftConfig exists, use its template. If not, we might be editing a new page (but usually we have slug).
+    // The editor frame usually loads a slug.
+    const templateName = draftConfig?.template || 'landing-page-template-1';
+    const templateModule = templates[templateName] || t1;
+
+    const pageHtml = templateModule.render(data);
 
     // Inject Editor Scripts & State
     // We append them to body

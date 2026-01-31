@@ -3,21 +3,68 @@ export const defaultData = {
     meta: {
         title: 'Knitted Old Money Sweater Polo - Clearance Sale'
     },
-    hero: {
+    header: {
         headline: 'Knitted Old Money Sweater Polo',
-        priceText: '(700-750 TK)',
+        badge: 'Clearance Sale',
+        badgeIcon: 'local_fire_department',
+        priceText: '(700-750 TK)'
+    },
+    hero: {
         videoThumbnail: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDATBYdml3fMIp7Z64_1l9VhVUyZIbtRoVnVvwiPI9k0T0YSoEKhrH2DipDBtl4KDjkenYLkS3_kbPw4SFYOPuF_C6QyNbCvUwp-knJZ1APHfgu4LnWatyikGVRP6xcCDettD5YqkHoqXv9rz4HuqbvtG0t0nyoEr4LsmXEmS7ITyJ963OcjmpmxRf1xiyvumUcnR85axrfbqW06ZmJs74WOErWd74PdaVXUStBHDWOjcvuEOmNZQ2ycKcRrJDKU7-u9GtrMP-Lnbql',
-        badge: 'Sweater Polo (OLD MONEY STYLE)',
+        videoBadge: 'M',
+        videoTitle: 'Sweater Polo (OLD MONEY STYLE)',
         description: '<span class="text-yellow-400 font-bold">Our Most Premium Sweater Polo ✨ OLD Money Aesthetic</span> — Experience true class ❤️ Rich texture, Refined look & Effortless Luxury — All in one 🔥 80% Sweater-Knitted Cotton + 20% Nylon, Jacquard Machine Seamless Finishing ensures smooth & elegant fit 🔥'
     },
-    images: {
-        productMain: 'https://lh3.googleusercontent.com/aida-public/AB6AXuByOiuNhK9z5qOSRCmNANhuIPBg_YFQYTdBCljcJCFWTwDuj42i4LdIDEBcetGPkLEo_ib5Z49sSCoMqgfcbIOJkXQW9DUP75Xih_yMGX0NvdLLKLrtCgonUTC2zCJfBmNFUQ-MtW3MMQtMGlztwj_dirzxl_Oafq7bII1xW9OZ3FH4XaD7_VHZqEYcNjWRj1-ullGBq3rqKQA8y_Vtr356NlZUFfjArcM5ycUfWJfOO8oDOr5tPsOfe8R7cKTtEAPSHmCnxzwBcDfu'
+    gallery: {
+        mainImage: 'https://lh3.googleusercontent.com/aida-public/AB6AXuByOiuNhK9z5qOSRCmNANhuIPBg_YFQYTdBCljcJCFWTwDuj42i4LdIDEBcetGPkLEo_ib5Z49sSCoMqgfcbIOJkXQW9DUP75Xih_yMGX0NvdLLKLrtCgonUTC2zCJfBmNFUQ-MtW3MMQtMGlztwj_dirzxl_Oafq7bII1xW9OZ3FH4XaD7_VHZqEYcNjWRj1-ullGBq3rqKQA8y_Vtr356NlZUFfjArcM5ycUfWJfOO8oDOr5tPsOfe8R7cKTtEAPSHmCnxzwBcDfu',
+        thumbnails: [
+            'https://lh3.googleusercontent.com/aida-public/AB6AXuCqMKNu0XZdMZJ6oTaO_I5YWuw23p-W9jWhDxzhaSP0F20K6VoqCADdUI7knKcTiCQH2BRGGuVtJH4J8XTvcFgK9Li8_7ZsqgQuOAQaMUd5l1p3RCQqMkEwx0KiJfgDYIpt3WJ0y-63Wc5Py059Ry65CHrcnXz1ycBtTmTRxuf-Mwz1HsHyvGFul3p-1UlzA6wg8x8TS2wT3l_lsdwSSkAIhMloemrHEq268pjND_KZ4a6LCv14FGWrq84eYkjSeyUjZqecqo7fifOP',
+            'https://lh3.googleusercontent.com/aida-public/AB6AXuCP1BvOflk_ZbtyJ6qiWzA3lyeRs2NQjMCgXuriGwer8MOqfKEM4dEpkNvwLzVlqwjEwh4PzR1m9C7VLv0x6aAB6ug3XQUuasVE2PV0OffmOFT-FQXjeSKORtNN0shDrmWg3JfyKIF8BR-eK_xBY2MgHVXuwwQhrRy74oX3QSvvGI7S-f6tjdaVCXIbRJj2E5WifOB5L4vUBiozfEdjiloiSr7X4hokctXmOzUxgILDy5iuUg3AyRfr3DJsOT27QAzwVBf4w6kvYS2L',
+            'https://lh3.googleusercontent.com/aida-public/AB6AXuC4VSwBbPIQYC_O6DJ2tN3oYebuSo7cfHq4OWFCRM4EWaPX6LiV1A1RSMU-pAOOzHjOiLh36YZJz4OZ6O2za6QePyT9aNiAKrwg3Ld27Bp-XWeJrS8yrsPensKhhaK2ZC2BS87Ft99en5kKsl9OaReFFAdSZsDgRKgmhEm_qT11HjM9B4e2XYfo7Y50BXXNsh-QMbTUqX8LFZ1hn0BduV9Ajb5RZLxYSCZ8-Oo2Qa0SYjQ7GYNhQKra79G1DgIwiScB4wQ68H0Efw7O',
+            'https://lh3.googleusercontent.com/aida-public/AB6AXuDCO1oGtr1bhckS3Apbe2Z7r0FJsFIgdDkv8COzSsD7sCIcR32Qm3HCdYLLa6xLev4pYFSSJ8eh6jbs4J7BaOU-EmtLx0eP4k5QZbj20Am8UtCyHZBuwFuK1p-i4V3BTPPTvdmtjO8eB_Fs8CYQDKPmanrPTbxTS-9AIP7Ye6cB2pRtXIIlhNczMzrPVBOZcXQsW9EHCjSO4tlKJ42a_BR4fzFHecj1UG-d7yb3gge2Yjci0-QOZFOaXSASKrEFBpDSHkNDUUjml-4e'
+        ]
     },
     features: [
         { label: 'Fabrication', text: 'Sweater Knitted 80% Cotton | 20% Nylon' },
         { label: 'GSM', text: '350+- and Gauge: 12GG' },
         { label: 'Process', text: 'Jacquard machine process - cleaner build with smoother texture' },
         { label: 'Quality', text: 'Lab-tested color quality - complete wash certified' }
+    ],
+    styles: [
+        { name: 'Bottle Green', image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuAMYUCmvx5PsOnO6VVRAIpBe8yN3hJc2xLxxCmou0Fr4rWYaHYK3Zkuax91OLFt7jFYtjJvPxr8EqxJnlTjAvUfcPItdf2jHroAFTzphC2_783Urc0v8vMaE9KTpnIIlEmD1vL2lO1mvDAL4fqGq4u36N-2fXnroVIO0eUCkeg2K5tQHsnwmDsIIUQmBaJbzHZE0mYc1QCDoBgSNbtXV5Pv0M9p13HeQjQKyVRYJm4EVIe53hkVPXHQE04E9vAMdMmg24qiJiN9rwAA' },
+        { name: 'Plum', image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuAojz3J1U-RrPUUe88xH9d94IHa8NDn_3uln7pfYX7mpyPXGRPxqsjcrtKaecAVuwsgMpEdU4hZRfeN8V2CLkOEumMPjdnTBRnQ0GJcwbLm9tKXyxknOx-TjNKmt-HmWf4dkRnc6suH5nzVggG7754UoQvu_uWTG6pB9DOb6OhsA7WNuFoEj5kegoojBcOTPM9uxl6zI67f46aIQr7bFtMrbr5QOZpHi3fktnoU_zdzNaMvLtnd7j6rRyvcXZxCk-6ZuEaLhmiH9JII' },
+        { name: 'Maroon', image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuCH8HVlzpskPxBP4F-UfZkTVkjvn1o7mM7-Z4VXLlTSQmm3q_Ayk0GkDw4Sia09A6X_-0TBoiZddmVGHNyLh_P1yDxg8OsUe5ps-QioZI-5OxzJvJUdJwRpJylwS7ZnOqRqeq3GJSuewZprSN4kMyMK1qlAb5haB9gZtxgXGVGWF8UYM1uKCn1SvN_X9isRPTRkeB-K_Qj7lfvYkBZNzpZYl_uS0CMWiLoDiVa1uSTadOB4ZsIA3hSIGrydSos6gEirPPgTUaUTM168' },
+        { name: 'Black', image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBE2cNE_yPqruL888c7T_9_ncWBk2LYcG8DtsKjriU8ov_Sxq7Q0bW82fJOJFZ8kxVqPzCWPaOpJ952zOXyUZZxZlPSdWogkPg506-Cbp8gW0HBUEbgvpkW2Cky5T50F6g575BWJpeeecnGvv0VmTUes1DF0era7uBo7zPyKBLBEcGrgvrggSDWL8bDEZawNvqSzqv2a--eX3TnCSJXuqBofhixS__rnm2KB5jwf1vau7DuFtV9FX51pSk-RX1MLVvrFTS3RvCFXeOq' }
+    ],
+    reviews: [
+        {
+            name: 'Ahsan Sadik',
+            status: 'Active now',
+            avatar: 'https://lh3.googleusercontent.com/aida-public/AB6AXuCYPGP9Tfy_t39IEkdIPzCXNB-ptDYVrD_uoGlkAhhmFQlwW8i-qSrUIBSqIZtuJNx6qpuhB1mZITgH5edYO2YFE47qqCCFpaqenh4vxAnbq6L4QnMW-tSnlko2A9D79tasH8Ie5YimrZfw3u1m1hQAPQmXT6a8WRp63qoLHqGmnKI3JE_QB0Kwqoid9-Yct2nexgOzk7s87fVeOXT1MsEAt5ODF6URBh4w0aYt5_84lYVSNRBNGuoIrxipDnuxSTDhxxAKFpV96Zm2',
+            messages: [
+                { text: 'Hello! Is the polo available?', type: 'received' },
+                { text: 'Yes sir! Premium quality.', type: 'sent' },
+                { text: 'Received it. It\'s so good! Thanks for fast delivery.', type: 'received' }
+            ]
+        },
+        {
+            name: 'Raj Ahmed',
+            status: 'Active now',
+            avatar: 'https://lh3.googleusercontent.com/aida-public/AB6AXuCRHLltgSF1RBrwWjMwVWpG6cvbu1Q9rFtIqUQZZsmL2BDsQ6D1KhVO1wEIEDZCqhpaGaDuMlZ6BQgFJK_FE5fkVu-yMmLDnNgHdQKCsajwBaRMfkZa8WljMXW3a23PYLzGecKBSM5bFqgGjnrBB92HPuJS9OYJ3EI2zMAKP6a_UFxyVzWq0KxaRA38bbp7-Ap-Th0Ke7Z-arrFctfny-1RUF0MDjeCVuzjLDrZFx7r7tB1cjo8wePR15c0PZJ_m-t68jp4J02yRuuh',
+            messages: [
+                { text: 'Alhamdulillah satisfied!', type: 'received' },
+                { text: 'Alhamdulillah ❤️', type: 'sent' }
+            ]
+        },
+        {
+            name: 'Sushanta Kumar',
+            status: 'Active now',
+            avatar: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDgzXsV0T0FaltLk5xu2e6KOgxXw7It0uemQQPArzapwYoukCkjQC3R3aks_bDVJQo6oGCOQN-GjbEfKywCzXVUUVMcAFV-PLNCp4dbRzeStb9S9WAstTCblUUPbI8a_tPLh_yS3P--i2MWV0hsnrxgKDeW_ZWLtzl2mwMbKYJT27hsAqowcNCKK-CHmsQMXXfYQD-AFWyI-BHdehdmaiFy-q2Xz5oCS4E2YuMW2jkk9KPbx2OmITG31SLMT56C3cyzYEi6_sidkYHA',
+            messages: [
+                { text: 'Products pochondo hoyeche bhaiya. Fabric ta osthir.', type: 'received' },
+                { text: 'Ji didam thik thak ache 👍', type: 'sent' }
+            ]
+        }
     ],
     sizeChart: {
         columns: ['Size', 'M', 'L', 'XL', 'XXL'],
@@ -26,19 +73,46 @@ export const defaultData = {
             { label: 'Length', values: ['27"', '28"', '29"', '30"'] }
         ]
     },
+    paymentMethods: {
+        homeDelivery: '🚚 Home Delivery - Open box before payment'
+    },
     orderForm: {
         products: [
             {
                 id: 'green',
-                name: 'Bottle Green',
-                price: '750',
-                image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDIKCWycOMSnZdsrpRFyuby1IwzShihsNTDOrydK96XsXdNibSW9uhWqaL2zykHWNLm31gYAmmB8itnp6-h2eLvIJ3mGofgYitVq0nz9V3Ja8-twWABPkTwboRp4RYXnGsXhVBIhmNbwqF-sNJYnN32vRVdbdz7Gd7CJHFl6txA7KztF9B6qUMQUiUqrbWj1-5KMULWfc5GxmMXulVWxWozoBdw6TVTZLs_l6MaH5txHEkvtMBg6KCztGxO6SzVyxiHbZQXDjx1tuL2'
+                name: 'Knitted Old Money Sweater Polo',
+                color: 'Bottle Green',
+                colorCode: 'bg-green-800',
+                price: '0', // As per HTML
+                image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDIKCWycOMSnZdsrpRFyuby1IwzShihsNTDOrydK96XsXdNibSW9uhWqaL2zykHWNLm31gYAmmB8itnp6-h2eLvIJ3mGofgYitVq0nz9V3Ja8-twWABPkTwboRp4RYXnGsXhVBIhmNbwqF-sNJYnN32vRVdbdz7Gd7CJHFl6txA7KztF9B6qUMQUiUqrbWj1-5KMULWfc5GxmMXulVWxWozoBdw6TVTZLs_l6MaH5txHEkvtMBg6KCztGxO6SzVyxiHbZQXDjx1tuL2',
+                sizes: ['L', 'XL']
             },
             {
                 id: 'plum',
-                name: 'Plum',
-                price: '750',
-                image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBQ5q77HVPMQF2E6c8cXCuQf5D-KWfAgxCX1ZqWnRHDEwhDAcHRnJa2kbvJXaEAPm_jp06c5b-xbD394l2tO7aT4LkuAfx1bbjQcnsWkUAV5zfXRsEJxrrEl-HhHXJlfN0e9JU4L3EChCLwEObireRYH-m9AU7GXcMD8TZGNPHi8gcrA59nvGq-InMFNdt1cWU-IfGaHERspTEeYtXJK1p0U2FK6DB3qoHQpCdt94H9_3r69WEnJWvdFPIfdCoi816t3fUVZ4zE50w_'
+                name: 'Knitted Old Money Sweater Polo',
+                color: 'Plum',
+                colorCode: 'bg-purple-900',
+                price: '0',
+                image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBQ5q77HVPMQF2E6c8cXCuQf5D-KWfAgxCX1ZqWnRHDEwhDAcHRnJa2kbvJXaEAPm_jp06c5b-xbD394l2tO7aT4LkuAfx1bbjQcnsWkUAV5zfXRsEJxrrEl-HhHXJlfN0e9JU4L3EChCLwEObireRYH-m9AU7GXcMD8TZGNPHi8gcrA59nvGq-InMFNdt1cWU-IfGaHERspTEeYtXJK1p0U2FK6DB3qoHQpCdt94H9_3r69WEnJWvdFPIfdCoi816t3fUVZ4zE50w_',
+                sizes: ['M', 'L', 'XL']
+            },
+            {
+                id: 'maroon',
+                name: 'Knitted Old Money Sweater Polo',
+                color: 'Maroon',
+                colorCode: 'bg-red-900',
+                price: '0',
+                image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDZ6jBgO0cLbe83hl8Ebh5z4MUsaNj6KT1AFrHehSg2bB_AUZ7hw8pUBr1lQh5hpp2hGWRIuDNiJ5bosGKt7T-Maa-9F8eb4vPfKMfDXZfyQK6svg2MnqJtyZCgK4eCpOXX_eMiQJHp7O20yVJEeI6TGl9cbD3uqZPCUhYbXdDphc42mQUGpg2FqpCGn4ZIRxiZZJ4y0Z9cZcP6sLHvQDi5NlypKxJYCP8OQkrxBE58RiWkaXSKgRKeb6jwy-oOQrcaYwMskSStnfuj',
+                sizes: ['L', 'XL']
+            },
+            {
+                id: 'black',
+                name: 'Knitted Old Money Sweater Polo',
+                color: 'Black',
+                colorCode: 'bg-black border border-gray-600',
+                price: '0',
+                image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuAgCutE6Da8gXN3OtrzlnKQTJG1-Nk_0PuyyzY3pZhrNywTGjAPHXII-_KrJabNN0sL_f1OjXO2eVmOwXgayBKgSVwG-amuQk1pjcUc3LkFlSEhBB4QP3-TBVC5Fx8J9S5DGa-d0H8clYdeXfUqnstWMqxvURadsnDbxsrERQN0oVu_p8ES7g6VeHEXjD7RaJCBMSh873rW7h7dXAQgx8UDEedngX-wdRCkyy_Qy1p9_PlnzgC_0gzKkFdvxsQHkeaM--QxLPtVsdps',
+                sizes: ['M', 'L', 'XL']
             }
         ],
         shippingOptions: [
@@ -47,26 +121,13 @@ export const defaultData = {
         ]
     },
     contact: {
-        phone: '+8801645244956'
+        phone: '+8801645244956',
+        copyright: '© 2024 POLO. All rights reserved. Powered by Onylo'
     }
 };
 
 export function render(data: any): string {
-    // If data is missing keys, merge with defaultData to ensure no undefined errors
-    // Deep merge often better, but for now simple spread or assuming data is complete if passed
-    // However, if data comes from partial edits, safety is good.
-    // For rendering, we usually expect 'data' to be the full object from KV.
-    const d = { ...defaultData, ...data };
-    // Note: Shallow merge might lose nested structures if not careful, but usually we replace whole sections. 
-    // Actually, for nested objects like 'hero', we might want d.hero = { ...defaultData.hero, ...data.hero }
-    // But usually content service provides full object. Let's assume 'data' is sufficient or we use accessors.
-
-    // Better strategy for template literals: use 'data?.field || defaultData.field' pattern inline
-    // OR create a fully merged object first.
-    // Given the complexity, let's just use 'd' which is 'data' (assuming it's seeded with defaultData on creation).
-    // If 'data' is empty (legacy), we fall back to defaultData.
     const content = Object.keys(data).length > 0 ? data : defaultData;
-
     const safeJson = JSON.stringify(content).replace(/</g, '\\u003c');
     const b = (path: string) => `data-bind="${path}"`;
 
@@ -112,13 +173,13 @@ export function render(data: any): string {
 <span class="material-icons text-3xl">diamond</span>
 </div>
 </div>
-<h1 class="text-3xl md:text-5xl font-extrabold uppercase tracking-wide mb-2 drop-shadow-md" ${b('hero.headline')}>
-    ${content.hero.headline}
+<h1 class="text-3xl md:text-5xl font-extrabold uppercase tracking-wide mb-2 drop-shadow-md" ${b('header.headline')}>
+    ${content.header.headline}
 </h1>
 <div class="text-primary font-bold text-xl md:text-3xl mb-8 flex items-center justify-center gap-2">
-<span>Clearance Sale</span>
-<span class="material-icons animate-pulse">local_fire_department</span>
-<span ${b('hero.priceText')}>${content.hero.priceText}</span>
+<span>${content.header.badge}</span>
+<span class="material-icons animate-pulse">${content.header.badgeIcon}</span>
+<span ${b('header.priceText')}>${content.header.priceText}</span>
 </div>
 <div class="relative w-full max-w-3xl mx-auto aspect-video bg-gray-900 rounded-xl overflow-hidden border-4 border-primary/50 shadow-2xl mb-8 group cursor-pointer">
 <img alt="Video thumbnail of polo shirt" class="w-full h-full object-cover opacity-60 group-hover:opacity-40 transition-opacity" src="${content.hero.videoThumbnail}" ${b('hero.videoThumbnail')}/>
@@ -128,9 +189,9 @@ export function render(data: any): string {
 </div>
 </div>
 <div class="absolute top-4 left-4 flex items-center gap-2">
-<div class="w-10 h-10 rounded-full bg-blue-600 flex items-center justify-center text-white font-bold">M</div>
+<div class="w-10 h-10 rounded-full bg-blue-600 flex items-center justify-center text-white font-bold">${content.hero.videoBadge}</div>
 <div class="text-left">
-<p class="text-sm font-semibold shadow-black drop-shadow-md" ${b('hero.badge')}>${content.hero.badge}</p>
+<p class="text-sm font-semibold shadow-black drop-shadow-md" ${b('hero.videoTitle')}>${content.hero.videoTitle}</p>
 </div>
 </div>
 </div>
@@ -148,7 +209,12 @@ ${content.hero.description}
 <div class="max-w-5xl mx-auto px-4 -mt-8 relative z-10">
 <div class="bg-card-light dark:bg-card-dark rounded-xl shadow-xl p-4 mb-12 border border-gray-100 dark:border-gray-700">
 <div class="aspect-[4/3] md:aspect-[16/9] overflow-hidden rounded-lg mb-4 bg-gray-100 dark:bg-gray-800">
-<img alt="Green Polo Shirt Main View" class="w-full h-full object-contain mix-blend-multiply dark:mix-blend-normal" src="${content.images.productMain}" ${b('images.productMain')}/>
+<img alt="Green Polo Shirt Main View" class="w-full h-full object-contain mix-blend-multiply dark:mix-blend-normal" src="${content.gallery.mainImage}" ${b('gallery.mainImage')}/>
+</div>
+<div class="grid grid-cols-4 gap-2 md:gap-4">
+${content.gallery.thumbnails.map((thumb: string, i: number) => `
+<img alt="Thumbnail ${i + 1}" class="rounded cursor-pointer border ${i === 0 ? 'border-2 border-primary' : 'border-transparent hover:border-gray-300 dark:hover:border-gray-600'}" src="${thumb}" ${b(`gallery.thumbnails.${i}`)}/>
+`).join('')}
 </div>
 </div>
 <div class="bg-card-light dark:bg-card-dark rounded-xl shadow-md border border-gray-200 dark:border-gray-700 overflow-hidden mb-12">
@@ -168,11 +234,54 @@ ${content.features.map((f: any, i: number) => `
 `).join('')}
 </div>
 </div>
-<!-- ... Features and Images Sections Omitted for Brevity But Preserved in Spirit ... -->
+<h2 class="text-2xl md:text-3xl font-bold text-center mb-8 text-secondary dark:text-white">Choose Your Style</h2>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-6 mb-16">
+${content.styles.map((style: any, i: number) => `
+<div class="group cursor-pointer">
+<div class="rounded-xl overflow-hidden mb-3 shadow-lg group-hover:shadow-xl transition-all">
+<img alt="${style.name}" class="w-full h-64 object-cover" src="${style.image}" ${b(`styles.${i}.image`)}/>
+</div>
+<div class="bg-gray-200 dark:bg-gray-700 rounded-full py-2 px-4 text-center">
+<span class="font-bold text-sm md:text-base text-gray-800 dark:text-white" ${b(`styles.${i}.name`)}>${style.name}</span>
+</div>
+</div>
+`).join('')}
+</div>
+</div>
+<section class="bg-[#0f111a] py-16 px-4">
+<div class="max-w-6xl mx-auto">
+<div class="text-center mb-10">
+<h2 class="text-3xl font-bold text-blue-500 mb-2">Customer Reviews</h2>
+<p class="text-gray-400 flex items-center justify-center gap-2">
+                    Our Customer's Experience <span class="material-icons text-sm">chat</span>
+</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+${content.reviews.map((review: any, i: number) => `
+<div class="bg-white rounded-lg p-4 shadow-lg border-l-4 border-blue-500">
+<div class="flex items-center gap-3 mb-3">
+<div class="w-10 h-10 rounded-full bg-gray-200 overflow-hidden">
+<img alt="${review.name}" class="w-full h-full object-cover" src="${review.avatar}" ${b(`reviews.${i}.avatar`)}/>
+</div>
+<div>
+<p class="font-bold text-xs text-gray-800" ${b(`reviews.${i}.name`)}>${review.name}</p>
+<p class="text-[10px] text-gray-500" ${b(`reviews.${i}.status`)}>${review.status}</p>
+</div>
+</div>
+${review.messages.map((msg: any, j: number) => `
+<div class="${msg.type === 'received' ? 'bg-blue-100 text-gray-800 w-3/4' : 'bg-blue-500 text-white ml-auto w-3/4 text-right'} p-2 rounded-lg ${msg.type === 'received' ? 'rounded-tl-none' : 'rounded-tr-none'} mb-2 text-xs">
+    ${msg.text}
+</div>
+`).join('')}
+</div>
+`).join('')}
+</div>
+</div>
+</section>
 <section class="bg-secondary py-16 px-4">
 <div class="max-w-4xl mx-auto bg-secondary border border-gray-700 rounded-xl overflow-hidden shadow-2xl relative">
 <div class="text-center pt-8 pb-4">
-<h2 class="text-primary text-2xl md:text-3xl font-bold mb-2">Clearance Sale 🔥 ${content.hero.priceText}</h2>
+<h2 class="text-primary text-2xl md:text-3xl font-bold mb-2">Clearance Sale 🔥 ${content.header.priceText}</h2>
 </div>
 <div class="bg-white p-6 mx-4 mb-4 rounded-lg flex flex-col md:flex-row items-center justify-center gap-8">
 <div class="w-48 opacity-75">
@@ -201,67 +310,77 @@ ${row.values.map((val: string) => `<td class="border border-gray-300 p-2">${val}
 </table>
 </div>
 </div>
+<div class="flex flex-col md:flex-row justify-center gap-4 pb-8 px-4">
+<button class="bg-primary hover:bg-orange-600 text-white font-bold py-3 px-8 rounded-full shadow-lg flex items-center justify-center gap-2">
+<span class="material-icons">shopping_cart</span>
+                    Order Now
+                </button>
+<button class="bg-secondary-800 border border-white/30 text-white font-bold py-3 px-8 rounded-full hover:bg-white/10 flex items-center justify-center gap-2">
+<span class="material-icons">call</span>
+                    ${content.contact.phone}
+                </button>
+</div>
+<div class="bg-gray-700/50 p-2 text-center">
+<span class="text-xs text-gray-300">${content.paymentMethods.homeDelivery}</span>
+</div>
 </div>
 </section>
-<section class="py-16 px-4 max-w-6xl mx-auto" id="order-form">
+<section class="py-16 px-4 max-w-6xl mx-auto">
 <h2 class="text-2xl md:text-3xl font-bold text-center mb-4 text-secondary dark:text-white">
             Select size and fill the form to confirm order 👇
         </h2>
 <form class="grid grid-cols-1 lg:grid-cols-3 gap-8 mt-10">
 <div class="lg:col-span-2 space-y-8">
 <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-    <!-- Products from Data or Default -->
-     ${content.orderForm.products.map((prod: any, i: number) => `
-    <label class="relative border-2 border-gray-200 dark:border-gray-700 rounded-lg p-3 flex gap-3 cursor-pointer hover:border-gray-400 transition-colors has-[:checked]:border-primary has-[:checked]:bg-orange-50 dark:has-[:checked]:bg-gray-800">
-        <input class="absolute top-3 right-3 h-5 w-5 text-primary border-gray-300 rounded focus:ring-primary" name="product" type="radio" value="${prod.id}" ${i === 0 ? 'checked' : ''} data-price="${prod.price}"/>
-        <div class="w-16 h-16 bg-gray-200 rounded overflow-hidden flex-shrink-0">
-             <img alt="${prod.name}" class="w-full h-full object-cover" src="${prod.image}" />
-        </div>
-        <div class="flex-1">
-            <h4 class="font-bold text-sm text-gray-800 dark:text-white">${prod.name}</h4>
-            <div class="flex items-center gap-2 mt-2">
-                 <span class="text-xs text-gray-500 ml-auto">${prod.price} Taka</span>
-            </div>
-        </div>
-    </label>
-    `).join('')}
+${content.orderForm.products.map((prod: any, i: number) => `
+<label class="relative border-2 border-gray-200 dark:border-gray-700 rounded-lg p-3 flex gap-3 cursor-pointer hover:border-gray-400 transition-colors has-[:checked]:border-primary has-[:checked]:bg-orange-50 dark:has-[:checked]:bg-gray-800">
+<input class="absolute top-3 right-3 h-5 w-5 text-primary border-gray-300 rounded focus:ring-primary" name="product" type="checkbox" value="${prod.id}" />
+<div class="w-16 h-16 bg-gray-200 rounded overflow-hidden flex-shrink-0">
+<img alt="${prod.name}" class="w-full h-full object-cover" src="${prod.image}" />
+</div>
+<div class="flex-1">
+<h4 class="font-bold text-sm text-gray-800 dark:text-white">${prod.name}</h4>
+<div class="flex items-center gap-2 mt-1">
+<span class="text-xs text-gray-500 dark:text-gray-400">Size:</span>
+<div class="flex gap-1">
+${prod.sizes.map((size: string) => `<span class="px-2 py-0.5 text-xs border border-gray-300 rounded hover:bg-gray-100 dark:border-gray-600 dark:text-gray-300">${size}</span>`).join('')}
+</div>
+</div>
+<div class="flex items-center gap-2 mt-2">
+<div class="w-3 h-3 rounded-full ${prod.colorCode}"></div>
+<span class="text-xs font-medium dark:text-gray-300">${prod.color}</span>
+<span class="text-xs text-gray-500 ml-auto">0 pcs - 0 Taka</span>
+</div>
+</div>
+</label>
+`).join('')}
 </div>
 <div>
 <h3 class="font-bold text-lg mb-4 text-gray-800 dark:text-white">Fill out the form</h3>
 <div class="space-y-4">
 <div class="relative">
-<input id="customer_name" class="w-full pl-4 pr-10 py-3 rounded-lg border-gray-300 dark:border-gray-600 dark:bg-gray-800 dark:text-white focus:border-primary focus:ring-primary shadow-sm" placeholder="Enter your full name" type="text"/>
+<input class="w-full pl-4 pr-10 py-3 rounded-lg border-gray-300 dark:border-gray-600 dark:bg-gray-800 dark:text-white focus:border-primary focus:ring-primary shadow-sm" placeholder="Enter your full name" type="text" id="customer_name"/>
+<span class="material-icons absolute right-3 top-3 text-red-400 text-sm">more_horiz</span>
 </div>
 <div>
-<input id="customer_phone" class="w-full px-4 py-3 rounded-lg border-gray-300 dark:border-gray-600 dark:bg-gray-800 dark:text-white focus:border-primary focus:ring-primary shadow-sm" placeholder="Enter your mobile number" type="tel"/>
+<input class="w-full px-4 py-3 rounded-lg border-gray-300 dark:border-gray-600 dark:bg-gray-800 dark:text-white focus:border-primary focus:ring-primary shadow-sm" placeholder="Enter your mobile number" type="tel" id="customer_phone"/>
 </div>
 <div>
-<input id="customer_address" class="w-full px-4 py-3 rounded-lg border-gray-300 dark:border-gray-600 dark:bg-gray-800 dark:text-white focus:border-primary focus:ring-primary shadow-sm" placeholder="Enter your full address" type="text"/>
-</div>
-<div>
-    <label class="block text-sm font-bold text-gray-700 dark:text-gray-300 mb-2">Size</label>
-    <div class="flex gap-2">
-    ${['M', 'L', 'XL', '2XL'].map(size => `
-        <label class="cursor-pointer">
-            <input type="radio" name="size" value="${size}" class="peer hidden" />
-            <div class="px-3 py-2 border rounded hover:bg-gray-100 peer-checked:bg-primary peer-checked:text-white transition">${size}</div>
-        </label>
-    `).join('')}
-    </div>
+<input class="w-full px-4 py-3 rounded-lg border-gray-300 dark:border-gray-600 dark:bg-gray-800 dark:text-white focus:border-primary focus:ring-primary shadow-sm" placeholder="Enter your full address" type="text" id="customer_address"/>
 </div>
 </div>
 </div>
 <div>
 <h3 class="text-sm font-semibold text-gray-600 dark:text-gray-400 mb-2">Delivery Area:</h3>
 <div class="flex gap-4">
-    ${content.orderForm.shippingOptions.map((opt: any, i: number) => `
-    <label class="flex-1 cursor-pointer">
-        <input name="delivery" type="radio" class="peer hidden" value="${opt.price}" ${i === 0 ? 'checked' : ''} />
-        <div class="py-3 px-4 rounded-lg border bg-gray-50 dark:bg-gray-800 dark:border-gray-600 peer-checked:bg-secondary peer-checked:text-white peer-checked:border-secondary transition-all text-center text-sm font-medium">
-            ${opt.label}<br/><span class="text-xs opacity-75">Shipping: ${opt.price} TK</span>
-        </div>
-    </label>
-    `).join('')}
+${content.orderForm.shippingOptions.map((opt: any, i: number) => `
+<label class="flex-1 cursor-pointer">
+<input ${i === 0 ? 'checked=""' : ''} class="peer hidden" name="delivery" type="radio" value="${opt.price}"/>
+<div class="py-3 px-4 rounded-lg border bg-gray-50 dark:bg-gray-800 dark:border-gray-600 peer-checked:bg-secondary peer-checked:text-white peer-checked:border-secondary transition-all text-center text-sm font-medium">
+                                ${opt.label}<br/><span class="text-xs opacity-75">Shipping: ${opt.price} TK</span>
+</div>
+</label>
+`).join('')}
 </div>
 </div>
 <div>
@@ -271,17 +390,34 @@ ${row.values.map((val: string) => `<td class="border border-gray-300 p-2">${val}
 <div class="lg:col-span-1">
 <div class="bg-white dark:bg-card-dark rounded-xl shadow-lg border border-gray-200 dark:border-gray-700 p-6 sticky top-8">
 <h3 class="font-bold text-lg mb-4 text-gray-800 dark:text-white border-b pb-2 dark:border-gray-600">Your Order</h3>
-
-<!-- Static Summary shim for Layout -->
-<div class="space-y-4 mb-6" id="summary-shim"></div>
-
+<div class="flex justify-between items-center text-sm text-gray-500 dark:text-gray-400 mb-2">
+<span>Product</span>
+<span>Amount</span>
+</div>
+<div class="py-8 text-center text-gray-400 text-sm border-b border-dashed border-gray-300 dark:border-gray-600 mb-4">
+                        No products selected yet
+                    </div>
+<div class="space-y-3 text-sm">
+<div class="flex justify-between text-gray-600 dark:text-gray-300">
+<span>Subtotal</span>
+<span class="font-medium">৳0</span>
+</div>
+<div class="flex justify-between text-gray-600 dark:text-gray-300">
+<span>Shipping Fee</span>
+<span class="font-medium">৳70</span>
+</div>
+<div class="flex justify-between font-bold text-lg text-gray-800 dark:text-white pt-3 border-t dark:border-gray-600">
+<span>Total</span>
+<span>৳70</span>
+</div>
+</div>
 <div class="mt-4 mb-6">
 <p class="text-xs text-gray-500 dark:text-gray-400">Cash on delivery</p>
 <p class="text-[10px] text-blue-500 mt-2 bg-blue-50 dark:bg-blue-900/30 p-2 rounded">
                             If you do not like the product, you can return it immediately upon delivery without any cost.
                         </p>
 </div>
-<button id="order-btn" class="w-full bg-secondary hover:bg-secondary/90 text-white font-bold py-3 px-4 rounded-lg shadow-md transition-transform active:scale-95" type="button">
+<button class="w-full bg-secondary hover:bg-secondary/90 text-white font-bold py-3 px-4 rounded-lg shadow-md transition-transform active:scale-95" type="submit" id="order-btn">
                         Place Order
                     </button>
 </div>
@@ -292,17 +428,17 @@ ${row.values.map((val: string) => `<td class="border border-gray-300 p-2">${val}
 <div class="max-w-4xl mx-auto text-center px-4">
 <h2 class="text-2xl font-bold mb-2">POLO</h2>
 <p class="text-gray-400 text-sm mb-4">Contact Us - ${content.contact.phone}</p>
-<p class="text-xs text-gray-500 mb-4">Clearance Sale 🔥 ${content.hero.priceText}</p>
+<p class="text-xs text-gray-500 mb-4">Clearance Sale 🔥 ${content.header.priceText}</p>
 <div class="flex justify-center gap-4 mb-6">
 <a class="text-gray-400 hover:text-white" href="#"><span class="material-icons">facebook</span></a>
 <a class="text-gray-400 hover:text-white" href="#"><span class="material-icons">phone</span></a>
 </div>
 <p class="text-[10px] text-gray-600">
-                © 2024 POLO. All rights reserved. Powered by Onylo
+                ${content.contact.copyright}
             </p>
 </div>
 </footer>
-</div>
+
 <script>
     window.siteContent = ${safeJson};
 </script>

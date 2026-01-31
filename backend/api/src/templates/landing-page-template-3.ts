@@ -19,7 +19,7 @@ export function render(data: any): string {
     const b = (path: string) => `data-bind="${path}"`;
 
     return `<!DOCTYPE html>
-<html lang="bn"><head>
+<html lang="bn"><head>q 
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>${content.meta.title}</title>

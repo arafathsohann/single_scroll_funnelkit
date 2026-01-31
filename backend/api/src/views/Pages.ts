@@ -74,8 +74,12 @@ export const PagesView = (pages: { slug: string; metadata?: any }[]) => `
              <div>
                 <label class="block text-sm font-bold text-slate-700 mb-2">Template</label>
                 <select name="template" class="w-full rounded-lg border-slate-300 focus:border-primary focus:ring-primary">
-                    <option value="commerce-v1">Commerce V1 (Default)</option>
-                    <option value="commerce-v1" disabled>More coming soon...</option>
+                    <option value="landing-page-template-1">Landing Page Template 1 (Default)</option>
+                    <option value="landing-page-template-2">Landing Page Template 2</option>
+                    <option value="landing-page-template-3">Landing Page Template 3</option>
+                    <option value="landing-page-template-4">Landing Page Template 4</option>
+                    <option value="landing-page-template-5">Landing Page Template 5</option>
+                    <option value="commerce-v1">Commerce V1 (Legacy)</option>
                 </select>
             </div>
             <div class="flex justify-end gap-3 mt-6">
